@@ -1,0 +1,354 @@
+import { useState, useEffect } from "react";
+import { useParams, Link } from "wouter";
+import {
+  ArrowLeft,
+  ArrowUpRight,
+  Bell,
+  Check,
+  Clock3,
+  ExternalLink,
+  Leaf,
+  Share2,
+} from "lucide-react";
+import { toast } from "sonner";
+import SiteHeader from "@/components/SiteHeader";
+import SiteFooter from "@/components/SiteFooter";
+import JsonLd from "@/components/JsonLd";
+import BlogPostNav from "@/components/BlogPostNav";
+import {
+  ARTIGOS_MAP,
+  getArtigoNavigation,
+  type ArtigoSection,
+} from "@/lib/artigos";
+
+function RenderSection({ section }: { section: ArtigoSection }) {
+  switch (section.type) {
+    case "paragraph":
+      return <p className="blog-post-p">{section.content as string}</p>;
+
+    case "heading":
+      return <h2 className="blog-post-h2">{section.content as string}</h2>;
+
+    case "quote":
+      return (
+        <blockquote className="blog-post-quote">
+          <p>{section.content as string}</p>
+        </blockquote>
+      );
+
+    case "callout":
+      return (
+        <div className="blog-post-callout" role="note">
+          {section.label && (
+            <span className="blog-post-callout__label">{section.label}</span>
+          )}
+          <p>{section.content as string}</p>
+        </div>
+      );
+
+    case "list":
+      return (
+        <ul className="blog-post-list">
+          {(section.content as string[]).map((item, idx) => (
+            <li key={idx}>{item}</li>
+          ))}
+        </ul>
+      );
+
+    default:
+      return null;
+  }
+}
+
+export default function BlogPost() {
+  const params = useParams<{ slug: string }>();
+  const slug = params.slug ?? "";
+  const artigo = ARTIGOS_MAP[slug];
+  const [email, setEmail] = useState("");
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "instant" as ScrollBehavior });
+  }, [slug]);
+
+  // 404 — slug inválido
+  if (!artigo) {
+    return (
+      <>
+        <title>Artigo não encontrado — Tecnovin</title>
+        <SiteHeader />
+        <main
+          id="main-content"
+          className="produto-notfound"
+          aria-labelledby="artigo-notfound-title"
+        >
+          <div className="container">
+            <p className="kicker">Erro 404</p>
+            <h1 id="artigo-notfound-title" className="display-heading">
+              Artigo não <em>encontrado</em>
+            </h1>
+            <p>O conteúdo que você procura não existe ou foi movido.</p>
+            <Link
+              href="/blog"
+              className="button button--primary"
+              style={{ marginTop: "2rem", display: "inline-flex" }}
+            >
+              Ver todos os conteúdos
+            </Link>
+          </div>
+        </main>
+        <SiteFooter />
+      </>
+    );
+  }
+
+  const { anterior, proximo } = getArtigoNavigation(slug);
+
+  function subscribe(event: React.FormEvent) {
+    event.preventDefault();
+    if (!email.trim()) return;
+    toast.success("Obrigado. A newsletter Tecnovin está sendo preparada.");
+    setEmail("");
+  }
+
+  function handleShare() {
+    if (navigator.share) {
+      navigator
+        .share({
+          title: artigo.seo.title,
+          text: artigo.excerpt,
+          url: window.location.href,
+        })
+        .catch(() => {});
+    } else {
+      navigator.clipboard.writeText(window.location.href);
+      toast.success("Link copiado para a área de transferência!");
+    }
+  }
+
+  // --- JSON-LD Schemas ---
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: artigo.title,
+    description: artigo.excerpt,
+    image: `https://tecnovin.com.br${artigo.image}`,
+    author: {
+      "@type": "Organization",
+      name: "Tecnovin do Brasil",
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "Tecnovin do Brasil Ltda.",
+      url: "https://tecnovin.com.br",
+    },
+    datePublished: artigo.date,
+    url: `https://tecnovin.com.br/blog/${artigo.slug}`,
+  };
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Início",
+        item: "https://tecnovin.com.br/",
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Conteúdos",
+        item: "https://tecnovin.com.br/blog",
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: artigo.title,
+        item: `https://tecnovin.com.br/blog/${artigo.slug}`,
+      },
+    ],
+  };
+
+  const schemas = [articleSchema, breadcrumbSchema];
+
+  return (
+    <div className="min-h-screen bg-[#f7f4ef] text-[#251e1c]">
+      {/* SEO meta tags */}
+      <title>{artigo.seo.title}</title>
+      <meta name="description" content={artigo.seo.description} />
+      <meta name="keywords" content={artigo.seo.keywords.join(", ")} />
+      <link
+        rel="canonical"
+        href={`https://tecnovin.com.br/blog/${artigo.slug}`}
+      />
+      <meta property="og:title" content={artigo.seo.title} />
+      <meta property="og:description" content={artigo.seo.description} />
+      <meta
+        property="og:image"
+        content={`https://tecnovin.com.br${artigo.image}`}
+      />
+      <meta property="og:type" content="article" />
+      <meta
+        property="og:url"
+        content={`https://tecnovin.com.br/blog/${artigo.slug}`}
+      />
+      <JsonLd data={schemas} />
+
+      <SiteHeader />
+
+      <main id="main-content">
+        {/* Article Hero */}
+        <header className="blog-post-hero">
+          <div className="container blog-post-hero__inner">
+            <nav className="blog-breadcrumb" aria-label="Trilha de navegação">
+              <Link href="/">
+                <ArrowLeft size={15} /> Início
+              </Link>
+              <span>/</span>
+              <Link href="/blog">Conteúdos</Link>
+              <span>/</span>
+              <span>{artigo.category}</span>
+            </nav>
+
+            <div className="blog-post-hero__meta">
+              <span className="blog-post-category-tag">{artigo.category}</span>
+              <span className="blog-post-date-tag">{artigo.date}</span>
+              <span className="blog-post-read-tag">
+                <Clock3 size={14} /> {artigo.read} de leitura
+              </span>
+            </div>
+
+            <h1 className="blog-post-hero__title">{artigo.title}</h1>
+
+            <p className="blog-post-hero__excerpt">{artigo.excerpt}</p>
+          </div>
+        </header>
+
+        {/* Article Main Body */}
+        <article className="blog-post-content-wrap">
+          <div className="container blog-post-container">
+            <figure className="blog-post-cover">
+              <picture>
+                <source
+                  srcSet={artigo.image.replace(/\.(jpe?g|png)$/i, ".webp")}
+                  type="image/webp"
+                />
+                <img
+                  src={artigo.image}
+                  alt={artigo.imageAlt}
+                  className="blog-post-cover__img"
+                  loading="eager"
+                  fetchPriority="high"
+                  decoding="async"
+                  width={1280}
+                  height={720}
+                />
+              </picture>
+            </figure>
+            <div className="blog-post-body">
+              {artigo.body.map((sec, idx) => (
+                <RenderSection key={idx} section={sec} />
+              ))}
+
+              {/* Source attribution box for memory/press articles */}
+              {artigo.source && (
+                <div className="blog-post-source-box">
+                  <div className="blog-post-source-box__icon">
+                    <ExternalLink size={20} />
+                  </div>
+                  <div className="blog-post-source-box__content">
+                    <h4>Fonte e referência pública original</h4>
+                    <p>
+                      Para conferir a publicação integral da época e os canais
+                      de divulgação primários, acesse o link documental abaixo:
+                    </p>
+                    <a
+                      href={artigo.source}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="blog-post-source-link"
+                    >
+                      Consultar publicação original <ArrowUpRight size={15} />
+                    </a>
+                  </div>
+                </div>
+              )}
+
+              {/* Special CTA for portfolio guide */}
+              {artigo.slug === "mapa-de-possibilidades-uva-maca-laranja" && (
+                <div className="blog-post-portfolio-cta">
+                  <h3>Explore as fichas técnicas completas</h3>
+                  <p>
+                    Conheça detalhes sobre Brix, acidez, variedades e laudos dos
+                    nossos sucos e concentrados.
+                  </p>
+                  <Link href="/produtos" className="button button--primary">
+                    Ver catálogo de produtos
+                  </Link>
+                </div>
+              )}
+
+              {/* Post actions / share */}
+              <div className="blog-post-actions">
+                <button
+                  type="button"
+                  className="blog-post-share-btn"
+                  onClick={handleShare}
+                >
+                  <Share2 size={16} /> Compartilhar artigo
+                </button>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        {/* Prev / Next navigation */}
+        <BlogPostNav anterior={anterior} proximo={proximo} />
+
+        {/* Newsletter Section */}
+        <section className="newsletter-section" id="newsletter">
+          <div className="container newsletter-grid">
+            <div className="newsletter-symbol">
+              <Bell size={22} />
+              <span>
+                insights
+                <br />
+                <em>na sua caixa</em>
+              </span>
+            </div>
+            <div>
+              <p className="kicker">Receba os próximos conteúdos</p>
+              <h2 className="display-heading display-heading--small">
+                Uma boa ideia
+                <br />
+                <em>merece circular.</em>
+              </h2>
+            </div>
+            <form className="newsletter-form" onSubmit={subscribe}>
+              <label htmlFor="email">Seu melhor e-mail</label>
+              <div className="newsletter-input-wrap">
+                <input
+                  id="email"
+                  type="email"
+                  placeholder="nome@empresa.com"
+                  value={email}
+                  onChange={event => setEmail(event.target.value)}
+                  required
+                />
+                <button type="submit" aria-label="Assinar newsletter">
+                  <ArrowUpRight size={17} />
+                </button>
+              </div>
+              <small>
+                <Check size={13} /> Sem excesso. Só o que vale a leitura.
+              </small>
+            </form>
+          </div>
+        </section>
+      </main>
+
+      <SiteFooter />
+    </div>
+  );
+}
