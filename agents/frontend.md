@@ -20,6 +20,7 @@ Agente especializado em desenvolvimento de interfaces front-end para o projeto T
 - **tailwind-css**: Estilização com Tailwind CSS v4
 - **wouter-router**: Roteamento cliente-side
 - **framer-motion-animacoes**: Animações e transições
+- **classic-minimalist-ui**: Direção de arte clássica, elegante e minimalista + animações de scroll suaves com delay escalonado (`skills/classic-minimalist-ui/SKILL.md`)
 - **seo-onpage**: Meta tags, headings, URLs, robots.txt, sitemap em SPA
 - **seo-schema**: Implementação de dados estruturados JSON-LD (componente JsonLd)
 

@@ -6,6 +6,7 @@
 import { useState } from "react";
 import { Mail, MoveUpRight, CheckCircle2 } from "lucide-react";
 import { toast } from "sonner";
+import { Reveal } from "@/components/motion";
 import type { Produto } from "@/lib/produtos";
 
 interface ProductContactFormProps {
@@ -64,7 +65,7 @@ export default function ProductContactForm({
       aria-labelledby="contato-produto-title"
     >
       <div className="container produto-contact-inner">
-        <div className="produto-contact-copy">
+        <Reveal delay={0.08} className="produto-contact-copy">
           <p className="kicker kicker--light">Fale com a Tecnovin</p>
           <h2
             id="contato-produto-title"
@@ -81,9 +82,9 @@ export default function ProductContactForm({
             <Mail size={16} aria-hidden="true" />
             <span>contato@tecnovin.com.br</span>
           </div>
-        </div>
+        </Reveal>
 
-        <div className="produto-contact-form-wrap">
+        <Reveal delay={0.22} className="produto-contact-form-wrap">
           {sent ? (
             <div
               className="produto-contact-success"
@@ -197,7 +198,7 @@ export default function ProductContactForm({
               </button>
             </form>
           )}
-        </div>
+        </Reveal>
       </div>
     </section>
   );

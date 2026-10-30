@@ -11,6 +11,7 @@ import FichaTecnica from "@/components/FichaTecnica";
 import ProductNav from "@/components/ProductNav";
 import ProductContactForm from "@/components/ProductContactForm";
 import SeoHead from "@/components/SeoHead";
+import { Reveal, StaggerContainer, StaggerItem } from "@/components/motion";
 import { PRODUTOS_MAP, getProdutoNavigation } from "@/lib/produtos";
 import { SITE_URL } from "@/lib/seo";
 import { ChevronDown, Factory, Leaf, Sparkles } from "lucide-react";
@@ -191,7 +192,7 @@ export default function Produto() {
           aria-labelledby="produto-descricao-title"
         >
           <div className="container produto-descricao-inner">
-            <div>
+            <Reveal delay={0.05}>
               <p className="kicker">Sobre o produto</p>
               <h2
                 id="produto-descricao-title"
@@ -201,15 +202,15 @@ export default function Produto() {
                 <br />
                 <em>{produto.nomeComercialEn}</em>
               </h2>
-            </div>
-            <div className="produto-descricao-copy">
+            </Reveal>
+            <Reveal delay={0.2} className="produto-descricao-copy">
               <p>{produto.descricao}</p>
               {produto.historicoNaoConfirmado && produto.historicoAviso && (
                 <div className="produto-historico-card" role="note">
                   <p>{produto.historicoAviso}</p>
                 </div>
               )}
-            </div>
+            </Reveal>
           </div>
         </section>
 
@@ -220,84 +221,96 @@ export default function Produto() {
           aria-labelledby="produto-detalhes-title"
         >
           <div className="container">
-            <p className="kicker">Detalhes do ingrediente</p>
-            <h2
-              id="produto-detalhes-title"
-              className="display-heading display-heading--small"
+            <Reveal delay={0.05}>
+              <p className="kicker">Detalhes do ingrediente</p>
+              <h2
+                id="produto-detalhes-title"
+                className="display-heading display-heading--small"
+              >
+                Da fruta à <em>aplicação</em>
+              </h2>
+            </Reveal>
+            <StaggerContainer
+              className="produto-detalhes-grid"
+              staggerDelay={0.14}
+              delayChildren={0.1}
             >
-              Da fruta à <em>aplicação</em>
-            </h2>
-            <div className="produto-detalhes-grid">
-              <figure className="produto-detalhe produto-detalhe--materia-prima">
-                <picture>
-                  <source
-                    srcSet={produto.detalhesVisuais.materiaPrima.imagem.replace(
-                      /\.(jpe?g|png)$/i,
-                      ".webp"
-                    )}
-                    type="image/webp"
-                  />
-                  <img
-                    src={produto.detalhesVisuais.materiaPrima.imagem}
-                    alt={produto.detalhesVisuais.materiaPrima.alt}
-                    loading="lazy"
-                    decoding="async"
-                    width={800}
-                    height={600}
-                  />
-                </picture>
-                <figcaption>
-                  <Leaf size={15} strokeWidth={1.8} aria-hidden="true" />
-                  Matéria-prima
-                </figcaption>
-              </figure>
-              <figure className="produto-detalhe produto-detalhe--textura">
-                <picture>
-                  <source
-                    srcSet={produto.detalhesVisuais.textura.imagem.replace(
-                      /\.(jpe?g|png)$/i,
-                      ".webp"
-                    )}
-                    type="image/webp"
-                  />
-                  <img
-                    src={produto.detalhesVisuais.textura.imagem}
-                    alt={produto.detalhesVisuais.textura.alt}
-                    loading="lazy"
-                    decoding="async"
-                    width={800}
-                    height={600}
-                  />
-                </picture>
-                <figcaption>
-                  <Sparkles size={15} strokeWidth={1.8} aria-hidden="true" />
-                  Textura &amp; cor
-                </figcaption>
-              </figure>
-              <figure className="produto-detalhe produto-detalhe--aplicacao">
-                <picture>
-                  <source
-                    srcSet={produto.detalhesVisuais.aplicacao.imagem.replace(
-                      /\.(jpe?g|png)$/i,
-                      ".webp"
-                    )}
-                    type="image/webp"
-                  />
-                  <img
-                    src={produto.detalhesVisuais.aplicacao.imagem}
-                    alt={produto.detalhesVisuais.aplicacao.alt}
-                    loading="lazy"
-                    decoding="async"
-                    width={800}
-                    height={600}
-                  />
-                </picture>
-                <figcaption>
-                  <Factory size={15} strokeWidth={1.8} aria-hidden="true" />
-                  Aplicação industrial
-                </figcaption>
-              </figure>
-            </div>
+              <StaggerItem>
+                <figure className="produto-detalhe produto-detalhe--materia-prima">
+                  <picture>
+                    <source
+                      srcSet={produto.detalhesVisuais.materiaPrima.imagem.replace(
+                        /\.(jpe?g|png)$/i,
+                        ".webp"
+                      )}
+                      type="image/webp"
+                    />
+                    <img
+                      src={produto.detalhesVisuais.materiaPrima.imagem}
+                      alt={produto.detalhesVisuais.materiaPrima.alt}
+                      loading="lazy"
+                      decoding="async"
+                      width={800}
+                      height={600}
+                    />
+                  </picture>
+                  <figcaption>
+                    <Leaf size={15} strokeWidth={1.8} aria-hidden="true" />
+                    Matéria-prima
+                  </figcaption>
+                </figure>
+              </StaggerItem>
+              <StaggerItem>
+                <figure className="produto-detalhe produto-detalhe--textura">
+                  <picture>
+                    <source
+                      srcSet={produto.detalhesVisuais.textura.imagem.replace(
+                        /\.(jpe?g|png)$/i,
+                        ".webp"
+                      )}
+                      type="image/webp"
+                    />
+                    <img
+                      src={produto.detalhesVisuais.textura.imagem}
+                      alt={produto.detalhesVisuais.textura.alt}
+                      loading="lazy"
+                      decoding="async"
+                      width={800}
+                      height={600}
+                    />
+                  </picture>
+                  <figcaption>
+                    <Sparkles size={15} strokeWidth={1.8} aria-hidden="true" />
+                    Textura &amp; cor
+                  </figcaption>
+                </figure>
+              </StaggerItem>
+              <StaggerItem>
+                <figure className="produto-detalhe produto-detalhe--aplicacao">
+                  <picture>
+                    <source
+                      srcSet={produto.detalhesVisuais.aplicacao.imagem.replace(
+                        /\.(jpe?g|png)$/i,
+                        ".webp"
+                      )}
+                      type="image/webp"
+                    />
+                    <img
+                      src={produto.detalhesVisuais.aplicacao.imagem}
+                      alt={produto.detalhesVisuais.aplicacao.alt}
+                      loading="lazy"
+                      decoding="async"
+                      width={800}
+                      height={600}
+                    />
+                  </picture>
+                  <figcaption>
+                    <Factory size={15} strokeWidth={1.8} aria-hidden="true" />
+                    Aplicação industrial
+                  </figcaption>
+                </figure>
+              </StaggerItem>
+            </StaggerContainer>
           </div>
         </section>
 
@@ -311,7 +324,7 @@ export default function Produto() {
             aria-labelledby="produto-faq-title"
           >
             <div className="container produto-faq-inner">
-              <div className="produto-faq-header">
+              <Reveal delay={0.05} className="produto-faq-header">
                 <p className="kicker">Perguntas frequentes</p>
                 <h2
                   id="produto-faq-title"
@@ -319,18 +332,18 @@ export default function Produto() {
                 >
                   Dúvidas sobre o <em>produto</em>
                 </h2>
-              </div>
-              <div
+              </Reveal>
+              <StaggerContainer
                 className="faq-list"
-                role="list"
-                aria-label={`Perguntas frequentes sobre ${produto.nomeComercial}`}
+                staggerDelay={0.1}
+                delayChildren={0.1}
               >
                 {produto.faq.map(q => (
-                  <div key={q.pergunta} role="listitem">
+                  <StaggerItem key={q.pergunta} role="listitem">
                     <FaqItem pergunta={q.pergunta} resposta={q.resposta} />
-                  </div>
+                  </StaggerItem>
                 ))}
-              </div>
+              </StaggerContainer>
             </div>
           </section>
         )}

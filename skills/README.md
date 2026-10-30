@@ -4,14 +4,15 @@
 
 ## Skills Técnicas
 
-| Skill                                                         | Descrição                                                      |
-| ------------------------------------------------------------- | -------------------------------------------------------------- |
-| [react-shadcn](/skills/react-shadcn.md)                       | Desenvolvimento com React 19, shadcn/ui e componentes Radix UI |
-| [tailwind-css](/skills/tailwind-css.md)                       | Estilização com Tailwind CSS v4 e system de design             |
-| [wouter-router](/skills/wouter-router.md)                     | Roteamento com Wouter e navegação no cliente                   |
-| [express-api](/skills/express-api.md)                         | Backend Express para serve estático em produção                |
-| [typescript-zod](/skills/typescript-zod.md)                   | Tipagem TypeScript e validação com Zod                         |
-| [framer-motion-animacoes](/skills/framer-motion-animacoes.md) | Animações e transições com Framer Motion                       |
+| Skill                                                           | Descrição                                                              |
+| --------------------------------------------------------------- | ---------------------------------------------------------------------- |
+| [react-shadcn](/skills/react-shadcn.md)                         | Desenvolvimento com React 19, shadcn/ui e componentes Radix UI         |
+| [tailwind-css](/skills/tailwind-css.md)                         | Estilização com Tailwind CSS v4 e system de design                     |
+| [wouter-router](/skills/wouter-router.md)                       | Roteamento com Wouter e navegação no cliente                           |
+| [express-api](/skills/express-api.md)                           | Backend Express para serve estático em produção                        |
+| [typescript-zod](/skills/typescript-zod.md)                     | Tipagem TypeScript e validação com Zod                                 |
+| [framer-motion-animacoes](/skills/framer-motion-animacoes.md)   | Animações e transições com Framer Motion                               |
+| [classic-minimalist-ui](/skills/classic-minimalist-ui/SKILL.md) | Design clássico, elegante e minimalista + receitas de motion editorial |
 
 ## Skills de Domínio
 

@@ -7,7 +7,6 @@ import {
   Check,
   Clock3,
   ExternalLink,
-  Leaf,
   Share2,
 } from "lucide-react";
 import { toast } from "sonner";
@@ -15,6 +14,7 @@ import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import SeoHead from "@/components/SeoHead";
 import BlogPostNav from "@/components/BlogPostNav";
+import { Reveal, ScaleRevealImage } from "@/components/motion";
 import {
   ARTIGOS_MAP,
   getArtigoNavigation,
@@ -185,7 +185,7 @@ export default function BlogPost() {
   const schemas = [articleSchema, breadcrumbSchema];
 
   return (
-    <div className="min-h-screen bg-[#f7f4ef] text-[#251e1c]">
+    <div className="min-h-screen bg-[#faf8f5] text-[#1c1917]">
       <SeoHead
         title={artigo.seo.title}
         description={artigo.seo.description}
@@ -203,27 +203,37 @@ export default function BlogPost() {
         {/* Article Hero */}
         <header className="blog-post-hero">
           <div className="container blog-post-hero__inner">
-            <nav className="blog-breadcrumb" aria-label="Trilha de navegação">
-              <Link href="/">
-                <ArrowLeft size={15} /> Início
-              </Link>
-              <span>/</span>
-              <Link href="/blog">Conteúdos</Link>
-              <span>/</span>
-              <span>{artigo.category}</span>
-            </nav>
+            <Reveal delay={0.04} yOffset={14}>
+              <nav className="blog-breadcrumb" aria-label="Trilha de navegação">
+                <Link href="/">
+                  <ArrowLeft size={15} /> Início
+                </Link>
+                <span>/</span>
+                <Link href="/blog">Conteúdos</Link>
+                <span>/</span>
+                <span>{artigo.category}</span>
+              </nav>
+            </Reveal>
 
-            <div className="blog-post-hero__meta">
-              <span className="blog-post-category-tag">{artigo.category}</span>
-              <span className="blog-post-date-tag">{artigo.date}</span>
-              <span className="blog-post-read-tag">
-                <Clock3 size={14} /> {artigo.read} de leitura
-              </span>
-            </div>
+            <Reveal delay={0.12} yOffset={18}>
+              <div className="blog-post-hero__meta">
+                <span className="blog-post-category-tag">
+                  {artigo.category}
+                </span>
+                <span className="blog-post-date-tag">{artigo.date}</span>
+                <span className="blog-post-read-tag">
+                  <Clock3 size={14} /> {artigo.read} de leitura
+                </span>
+              </div>
+            </Reveal>
 
-            <h1 className="blog-post-hero__title">{artigo.title}</h1>
+            <Reveal delay={0.2} yOffset={22}>
+              <h1 className="blog-post-hero__title">{artigo.title}</h1>
+            </Reveal>
 
-            <p className="blog-post-hero__excerpt">{artigo.excerpt}</p>
+            <Reveal delay={0.3} yOffset={18}>
+              <p className="blog-post-hero__excerpt">{artigo.excerpt}</p>
+            </Reveal>
           </div>
         </header>
 
@@ -231,24 +241,26 @@ export default function BlogPost() {
         <article className="blog-post-content-wrap">
           <div className="container blog-post-container">
             <figure className="blog-post-cover">
-              <picture>
-                <source
-                  srcSet={artigo.image.replace(/\.(jpe?g|png)$/i, ".webp")}
-                  type="image/webp"
-                />
-                <img
-                  src={artigo.image}
-                  alt={artigo.imageAlt}
-                  className="blog-post-cover__img"
-                  loading="eager"
-                  fetchPriority="high"
-                  decoding="async"
-                  width={1280}
-                  height={720}
-                />
-              </picture>
+              <ScaleRevealImage delay={0.1}>
+                <picture>
+                  <source
+                    srcSet={artigo.image.replace(/\.(jpe?g|png)$/i, ".webp")}
+                    type="image/webp"
+                  />
+                  <img
+                    src={artigo.image}
+                    alt={artigo.imageAlt}
+                    className="blog-post-cover__img"
+                    loading="eager"
+                    fetchPriority="high"
+                    decoding="async"
+                    width={1280}
+                    height={720}
+                  />
+                </picture>
+              </ScaleRevealImage>
             </figure>
-            <div className="blog-post-body">
+            <Reveal delay={0.18} yOffset={20} className="blog-post-body">
               {artigo.body.map((sec, idx) => (
                 <RenderSection key={idx} section={sec} />
               ))}
@@ -301,7 +313,7 @@ export default function BlogPost() {
                   <Share2 size={16} /> Compartilhar artigo
                 </button>
               </div>
-            </div>
+            </Reveal>
           </div>
         </article>
 
@@ -311,41 +323,43 @@ export default function BlogPost() {
         {/* Newsletter Section */}
         <section className="newsletter-section" id="newsletter">
           <div className="container newsletter-grid">
-            <div className="newsletter-symbol">
+            <Reveal delay={0.05} className="newsletter-symbol">
               <Bell size={22} />
               <span>
                 insights
                 <br />
                 <em>na sua caixa</em>
               </span>
-            </div>
-            <div>
+            </Reveal>
+            <Reveal delay={0.16}>
               <p className="kicker">Receba os próximos conteúdos</p>
               <h2 className="display-heading display-heading--small">
                 Uma boa ideia
                 <br />
                 <em>merece circular.</em>
               </h2>
-            </div>
-            <form className="newsletter-form" onSubmit={subscribe}>
-              <label htmlFor="email">Seu melhor e-mail</label>
-              <div className="newsletter-input-wrap">
-                <input
-                  id="email"
-                  type="email"
-                  placeholder="nome@empresa.com"
-                  value={email}
-                  onChange={event => setEmail(event.target.value)}
-                  required
-                />
-                <button type="submit" aria-label="Assinar newsletter">
-                  <ArrowUpRight size={17} />
-                </button>
-              </div>
-              <small>
-                <Check size={13} /> Sem excesso. Só o que vale a leitura.
-              </small>
-            </form>
+            </Reveal>
+            <Reveal delay={0.26}>
+              <form className="newsletter-form" onSubmit={subscribe}>
+                <label htmlFor="email">Seu melhor e-mail</label>
+                <div className="newsletter-input-wrap">
+                  <input
+                    id="email"
+                    type="email"
+                    placeholder="nome@empresa.com"
+                    value={email}
+                    onChange={event => setEmail(event.target.value)}
+                    required
+                  />
+                  <button type="submit" aria-label="Assinar newsletter">
+                    <ArrowUpRight size={17} />
+                  </button>
+                </div>
+                <small>
+                  <Check size={13} /> Sem excesso. Só o que vale a leitura.
+                </small>
+              </form>
+            </Reveal>
           </div>
         </section>
       </main>

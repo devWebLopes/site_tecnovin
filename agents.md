@@ -79,6 +79,7 @@ Habilidades técnicas, regras de negócio e ferramentas que os agentes precisam 
 - **express-api**: Backend Express serve estático.
 - **typescript-zod**: Tipagem e validação.
 - **framer-motion-animacoes**: Animações e transições.
+- **classic-minimalist-ui**: Diretrizes canônicas de design clássico, elegante e minimalista e efeitos de scroll suaves com delay escalonado (`skills/classic-minimalist-ui/SKILL.md`).
 - **editorial-conteudo**: Diretrizes editoriais do site.
 - **acessibilidade-wcag**: Padrões WCAG de acessibilidade.
 - **performance-web**: Core Web Vitals e otimização.
