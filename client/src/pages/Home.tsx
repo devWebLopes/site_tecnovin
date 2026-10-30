@@ -75,7 +75,7 @@ const products = [
     tone: "wine",
     image: "/images/produtos/hero-uva.jpg",
     imageAlt:
-      "Cachos de uva Isabel e Concord maduros em videira, com folhas verdes ao fundo — ingrediente para o Concentrado de Uva da Tecnovin",
+      "Cachos de uvas Isabel e Concord com pruína natural ao lado de concentrado de uva rubi-violeta denso em copo borossilicato sobre ardósia escura — Tecnovin",
     description:
       "Concentrado de suco de uva para aplicações que pedem cor, corpo e identidade.",
   },
@@ -86,7 +86,7 @@ const products = [
     tone: "olive",
     image: "/images/produtos/hero-maca.jpg",
     imageAlt:
-      "Maçãs vermelhas e amarelas frescas em campo — ingrediente para o Concentrado de Maçã da Tecnovin",
+      "Maçãs Gala e Fuji frescas com corte transversal ao lado de concentrado de maçã clarificado 70° Brix âmbar-dourado em béquer de vidro — Tecnovin",
     description:
       "Uma base versátil para bebidas, blends e formulações de sabor equilibrado.",
   },
@@ -97,7 +97,7 @@ const products = [
     tone: "amber",
     image: "/images/produtos/hero-laranja.jpg",
     imageAlt:
-      "Laranjas Valência frescas cortadas ao meio sobre superfície de madeira — ingrediente para o Concentrado de Laranja Congelado da Tecnovin",
+      "Laranjas Valência maduras com corte transversal ao lado de concentrado congelado de laranja aveludado em copo sobre ardósia escura — Tecnovin",
     description:
       "Concentrado congelado de laranja para cadeias que valorizam consistência.",
   },
@@ -108,7 +108,7 @@ const products = [
     tone: "lime",
     image: "/images/produtos/hero-limao.jpg",
     imageAlt:
-      "Limões Siciliano e Tahiti frescos, um cortado ao meio revelando a polpa — ingrediente para o Concentrado de Limão da Tecnovin",
+      "Limão Siciliano e Lima Tahiti com corte transversal exibindo polpa cristalina ao lado de concentrado cítrico opalescente sobre ardósia — Tecnovin",
     description:
       "Acidez e frescor em um ingrediente pensado para soluções de alto giro.",
   },
@@ -119,7 +119,7 @@ const products = [
     tone: "coral",
     image: "/images/produtos/hero-acerola.jpg",
     imageAlt:
-      "Cachos de acerola vermelha e madura em galhos verdes — ingrediente para o Concentrado de Acerola da Tecnovin",
+      "Acerolas frescas maduras com folhas botânicas ao lado de concentrado escarlate-terracota aveludado em vidro sobre ardósia escura — Tecnovin",
     description:
       "Perfil vibrante para bebidas, alimentos e combinações funcionais.",
   },
@@ -130,7 +130,7 @@ const products = [
     tone: "gold",
     image: "/images/produtos/hero-abacaxi.jpg",
     imageAlt:
-      "Abacaxi brasileiro maduro inteiro e fatiado sobre fundo verde tropical — ingrediente para o Concentrado de Abacaxi da Tecnovin",
+      "Abacaxi brasileiro maduro inteiro e em fatias douradas sobre placa mineral de ardósia escura — ingrediente para Concentrado de Abacaxi da Tecnovin",
     description:
       "A assinatura tropical que amplia possibilidades de formulação.",
   },

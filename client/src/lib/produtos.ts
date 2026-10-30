@@ -151,7 +151,7 @@ const concentradoDeUva: Produto = {
   ],
   imagem: "/images/produtos/hero-uva.jpg",
   imagemAlt:
-    "Cachos de uva Isabel e Concord maduros em videira, com folhas verdes ao fundo — ingrediente para o Concentrado de Uva da Tecnovin",
+    "Cachos de uvas Isabel e Concord com pruína natural ao lado de concentrado de uva rubi-violeta denso em copo borossilicato sobre ardósia escura — Tecnovin",
   detalhesVisuais: {
     materiaPrima: {
       imagem: "/images/produtos/detalhes/detalhe-uva-materia-prima.jpg",
@@ -240,7 +240,7 @@ const concentradoDeMaca: Produto = {
   ],
   imagem: "/images/produtos/hero-maca.jpg",
   imagemAlt:
-    "Maçãs vermelhas e amarelas frescas em campo — ingrediente para o Concentrado de Maçã da Tecnovin",
+    "Maçãs Gala e Fuji frescas com corte transversal ao lado de concentrado de maçã clarificado 70° Brix âmbar-dourado em béquer de vidro — Tecnovin",
   detalhesVisuais: {
     materiaPrima: {
       imagem: "/images/produtos/detalhes/detalhe-maca-materia-prima.jpg",
@@ -331,7 +331,7 @@ const concentradoDeLaranja: Produto = {
   ],
   imagem: "/images/produtos/hero-laranja.jpg",
   imagemAlt:
-    "Laranjas Valência frescas cortadas ao meio sobre superfície de madeira — ingrediente para o Concentrado de Laranja Congelado da Tecnovin",
+    "Laranjas Valência maduras com corte transversal ao lado de concentrado congelado de laranja aveludado em copo sobre ardósia escura — Tecnovin",
   detalhesVisuais: {
     materiaPrima: {
       imagem: "/images/produtos/detalhes/detalhe-laranja-materia-prima.jpg",
@@ -422,7 +422,7 @@ const concentradoDeLimao: Produto = {
   ],
   imagem: "/images/produtos/hero-limao.jpg",
   imagemAlt:
-    "Limões Siciliano e Tahiti frescos, um cortado ao meio revelando a polpa — ingrediente para o Concentrado de Limão da Tecnovin",
+    "Limão Siciliano e Lima Tahiti com corte transversal exibindo polpa cristalina ao lado de concentrado cítrico opalescente sobre ardósia — Tecnovin",
   detalhesVisuais: {
     materiaPrima: {
       imagem: "/images/produtos/detalhes/detalhe-limao-materia-prima.jpg",
@@ -491,7 +491,7 @@ const concentradoDeAcerola: Produto = {
   ],
   imagem: "/images/produtos/hero-acerola.jpg",
   imagemAlt:
-    "Cachos de acerola vermelha e madura em galhos verdes — ingrediente para o Concentrado de Acerola da Tecnovin",
+    "Acerolas frescas maduras com folhas botânicas ao lado de concentrado escarlate-terracota aveludado em vidro sobre ardósia escura — Tecnovin",
   detalhesVisuais: {
     materiaPrima: {
       imagem: "/images/produtos/detalhes/detalhe-acerola-materia-prima.jpg",
@@ -559,7 +559,7 @@ const concentradoDeAbacaxi: Produto = {
   ],
   imagem: "/images/produtos/hero-abacaxi.jpg",
   imagemAlt:
-    "Abacaxi brasileiro maduro inteiro e fatiado sobre fundo verde tropical — ingrediente para o Concentrado de Abacaxi da Tecnovin",
+    "Abacaxi brasileiro maduro inteiro e em fatias douradas sobre placa mineral de ardósia escura — ingrediente para Concentrado de Abacaxi da Tecnovin",
   detalhesVisuais: {
     materiaPrima: {
       imagem: "/images/produtos/detalhes/detalhe-abacaxi-materia-prima.jpg",
