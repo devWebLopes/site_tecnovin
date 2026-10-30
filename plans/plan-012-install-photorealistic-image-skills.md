@@ -17,12 +17,12 @@ Para elevar a geração e curadoria de imagens do projeto **Tecnovin Institucion
 
 ## 2. Seleção e Arquitetura das Skills Instaladas
 
-| Skill                                    | Caminho no Projeto                                        | Escopo Principal                                                                                                                                             |
-| ---------------------------------------- | --------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **`photorealistic-prompt-engineering`**  | `skills/photorealistic-prompt-engineering/SKILL.md`       | Engenharia de prompts baseada em física óptica real (câmeras médio formato/full-frame, lentes macro/tilt-shift, iluminação global, micro-imperfeições, IOR). |
-| **`editorial-product-food-photography`** | `skills/editorial-product-food-photography/SKILL.md`      | Fotografia comercial e editorial de frutas in natura, concentrados líquidos (°Brix, viscosidade, contraluz), cristais (Cremor de Tártaro) e food styling.    |
-| **`industrial-architectural-photography`**| `skills/industrial-architectural-photography/SKILL.md`   | Fotografia agroindustrial B2B (tanques inox 316L, laboratórios de qualidade, envase asséptico) e paisagens de terroir no Vale dos Vinhedos.                  |
-| **`ai-image-qa-and-postprocessing`**     | `skills/ai-image-qa-and-postprocessing/SKILL.md`          | Protocolo de inspeção visual em 12 pontos (anti-CGI, anti-alucinação), color grading editorial e pipeline WebP/JPG de alta fidelidade com `sharp`.           |
+| Skill                                      | Caminho no Projeto                                     | Escopo Principal                                                                                                                                             |
+| ------------------------------------------ | ------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **`photorealistic-prompt-engineering`**    | `skills/photorealistic-prompt-engineering/SKILL.md`    | Engenharia de prompts baseada em física óptica real (câmeras médio formato/full-frame, lentes macro/tilt-shift, iluminação global, micro-imperfeições, IOR). |
+| **`editorial-product-food-photography`**   | `skills/editorial-product-food-photography/SKILL.md`   | Fotografia comercial e editorial de frutas in natura, concentrados líquidos (°Brix, viscosidade, contraluz), cristais (Cremor de Tártaro) e food styling.    |
+| **`industrial-architectural-photography`** | `skills/industrial-architectural-photography/SKILL.md` | Fotografia agroindustrial B2B (tanques inox 316L, laboratórios de qualidade, envase asséptico) e paisagens de terroir no Vale dos Vinhedos.                  |
+| **`ai-image-qa-and-postprocessing`**       | `skills/ai-image-qa-and-postprocessing/SKILL.md`       | Protocolo de inspeção visual em 12 pontos (anti-CGI, anti-alucinação), color grading editorial e pipeline WebP/JPG de alta fidelidade com `sharp`.           |
 
 Além disso, as 3 skills base do sistema (`image-ai-processing`, `image-optimization` e `image-naming-standards`) também são sincronizadas e documentadas no índice do projeto para operação conjunta.
 
@@ -49,4 +49,3 @@ Além disso, as 3 skills base do sistema (`image-ai-processing`, `image-optimiza
 - [x] `pnpm check` executado sem erros
 - [x] `pnpm format` aplicado
 - [x] `pnpm build` validado com sucesso
-

@@ -13,6 +13,7 @@ description: >-
 ## Filosofia Geral
 
 Um bom nome de arquivo deve ser:
+
 - **Autoexplicativo**: lido sem precisar abrir o arquivo
 - **Ordenável**: classificação alfabética = ordem lógica
 - **Portável**: sem espaços, acentos ou caracteres especiais
@@ -28,13 +29,13 @@ Um bom nome de arquivo deve ser:
 
 ### Componentes
 
-| Campo          | Formato              | Exemplo              | Obrigatório |
-|----------------|----------------------|----------------------|-------------|
-| Cliente/Projeto| `kebab-case`         | `espaco-therapy`     | ✅ Sim       |
-| Categoria      | Código curto         | `ext` / `int` / `ret`| Recomendado |
-| Data           | `YYYYMMDD`           | `20260916`           | ✅ Sim       |
-| Sequência      | `001` a `999+`       | `042`                | ✅ Sim       |
-| Variante       | sufixo descritivo    | `hero` / `thumb`     | Opcional    |
+| Campo           | Formato           | Exemplo               | Obrigatório |
+| --------------- | ----------------- | --------------------- | ----------- |
+| Cliente/Projeto | `kebab-case`      | `espaco-therapy`      | ✅ Sim      |
+| Categoria       | Código curto      | `ext` / `int` / `ret` | Recomendado |
+| Data            | `YYYYMMDD`        | `20260916`            | ✅ Sim      |
+| Sequência       | `001` a `999+`    | `042`                 | ✅ Sim      |
+| Variante        | sufixo descritivo | `hero` / `thumb`      | Opcional    |
 
 ### Exemplos Completos
 
@@ -51,39 +52,39 @@ editorial_capa_20260801_001_bw.jpg           # foto editorial, P&B
 
 ### Fotografia de Lugares / Imóveis
 
-| Código | Significado           |
-|--------|-----------------------|
-| `ext`  | Exterior / fachada    |
-| `int`  | Interior              |
-| `det`  | Detalhe               |
-| `aer`  | Aérea / drone         |
-| `pan`  | Panorâmica            |
-| `amb`  | Ambiente / atmosfera  |
+| Código | Significado          |
+| ------ | -------------------- |
+| `ext`  | Exterior / fachada   |
+| `int`  | Interior             |
+| `det`  | Detalhe              |
+| `aer`  | Aérea / drone        |
+| `pan`  | Panorâmica           |
+| `amb`  | Ambiente / atmosfera |
 
 ### Fotografia de Pessoas / Retratos
 
-| Código | Significado           |
-|--------|-----------------------|
-| `ret`  | Retrato               |
-| `grp`  | Grupo                 |
-| `act`  | Ação / movimento      |
-| `prf`  | Perfil lateral        |
-| `hed`  | Headshot              |
+| Código | Significado      |
+| ------ | ---------------- |
+| `ret`  | Retrato          |
+| `grp`  | Grupo            |
+| `act`  | Ação / movimento |
+| `prf`  | Perfil lateral   |
+| `hed`  | Headshot         |
 
 ### E-commerce / Produto
 
-| Código | Significado           |
-|--------|-----------------------|
-| `prd`  | Produto principal     |
-| `ctx`  | Produto em contexto   |
-| `emp`  | Embalagem             |
-| `det`  | Detalhe do produto    |
-| `clr`  | Variação de cor       |
+| Código | Significado         |
+| ------ | ------------------- |
+| `prd`  | Produto principal   |
+| `ctx`  | Produto em contexto |
+| `emp`  | Embalagem           |
+| `det`  | Detalhe do produto  |
+| `clr`  | Variação de cor     |
 
 ### Web e Marketing
 
 | Código | Significado           |
-|--------|-----------------------|
+| ------ | --------------------- |
 | `hero` | Imagem principal hero |
 | `ban`  | Banner                |
 | `bg`   | Background            |
@@ -151,14 +152,14 @@ Get-ChildItem "$pasta\*.jpg" | ForEach-Object {
 ### Node.js — Script completo com ExifReader + renomeação
 
 ```js
-import { readdir, rename } from 'fs/promises';
-import path from 'path';
+import { readdir, rename } from "fs/promises";
+import path from "path";
 
 const config = {
-  projeto:   'espaco-therapy',
-  categoria: 'int',
-  pasta:     './fotos-sessao',
-  inicio:    1,
+  projeto: "espaco-therapy",
+  categoria: "int",
+  pasta: "./fotos-sessao",
+  inicio: 1,
 };
 
 const arquivos = (await readdir(config.pasta))
@@ -166,17 +167,14 @@ const arquivos = (await readdir(config.pasta))
   .sort();
 
 let contador = config.inicio;
-const data = new Date().toISOString().slice(0, 10).replace(/-/g, '');
+const data = new Date().toISOString().slice(0, 10).replace(/-/g, "");
 
 for (const arquivo of arquivos) {
-  const ext  = path.extname(arquivo).toLowerCase();
-  const seq  = String(contador).padStart(3, '0');
+  const ext = path.extname(arquivo).toLowerCase();
+  const seq = String(contador).padStart(3, "0");
   const novo = `${config.projeto}_${config.categoria}_${data}_${seq}${ext}`;
 
-  await rename(
-    path.join(config.pasta, arquivo),
-    path.join(config.pasta, novo)
-  );
+  await rename(path.join(config.pasta, arquivo), path.join(config.pasta, novo));
 
   console.log(`✅ ${arquivo} → ${novo}`);
   contador++;
@@ -227,6 +225,7 @@ clinica-terapia-recepcao-ambiente-001.webp
 ## 7. Regras Obrigatórias
 
 > [!IMPORTANT]
+>
 > - **Nunca usar espaços**: substituir por hífen `-` (web) ou underscore `_` (arquivo)
 > - **Nunca usar acentos ou cedilhas**: `ã`, `ç`, `é` causam problemas em servidores
 > - **Sempre usar letras minúsculas**: evitar problemas de case-sensitivity em Linux/Mac

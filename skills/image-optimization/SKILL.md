@@ -21,7 +21,7 @@ Ferramentas cobertas: **Sharp** (Node.js), **ImageMagick** (CLI), **ffmpeg**,
 ## 1. Formato Ideal por Caso de Uso
 
 | Caso de Uso                      | Formato Recomendado | Alternativa |
-|----------------------------------|---------------------|-------------|
+| -------------------------------- | ------------------- | ----------- |
 | Fotografias gerais (web)         | **WebP**            | AVIF        |
 | Ícones / logos com transparência | **WebP** / **PNG**  | SVG         |
 | Animações                        | **WebP animado**    | GIF         |
@@ -34,33 +34,35 @@ Ferramentas cobertas: **Sharp** (Node.js), **ImageMagick** (CLI), **ffmpeg**,
 ## 2. Sharp (Node.js) — Biblioteca Principal
 
 ### Instalação
+
 ```bash
 npm install sharp
 ```
 
 ### Conversão e compressão básica
-```js
-import sharp from 'sharp';
 
-await sharp('entrada.jpg')
-  .webp({ quality: 82 })
-  .toFile('saida.webp');
+```js
+import sharp from "sharp";
+
+await sharp("entrada.jpg").webp({ quality: 82 }).toFile("saida.webp");
 ```
 
 ### Redimensionar mantendo proporção
+
 ```js
-await sharp('foto.jpg')
+await sharp("foto.jpg")
   .resize({ width: 1200, withoutEnlargement: true })
   .webp({ quality: 80 })
-  .toFile('foto-1200.webp');
+  .toFile("foto-1200.webp");
 ```
 
 ### Gerar múltiplos tamanhos (responsivo)
+
 ```js
 const tamanhos = [400, 800, 1200, 1920];
 
 for (const largura of tamanhos) {
-  await sharp('original.jpg')
+  await sharp("original.jpg")
     .resize({ width: largura, withoutEnlargement: true })
     .webp({ quality: 80 })
     .toFile(`imagem-${largura}w.webp`);
@@ -68,20 +70,22 @@ for (const largura of tamanhos) {
 ```
 
 ### Processar lote de imagens (pasta inteira)
+
 ```js
-import sharp from 'sharp';
-import { readdir } from 'fs/promises';
-import path from 'path';
+import sharp from "sharp";
+import { readdir } from "fs/promises";
+import path from "path";
 
-const pastaEntrada = './imagens-originais';
-const pastaSaida   = './imagens-otimizadas';
+const pastaEntrada = "./imagens-originais";
+const pastaSaida = "./imagens-otimizadas";
 
-const arquivos = (await readdir(pastaEntrada))
-  .filter(f => /\.(jpe?g|png|tiff?)$/i.test(f));
+const arquivos = (await readdir(pastaEntrada)).filter(f =>
+  /\.(jpe?g|png|tiff?)$/i.test(f)
+);
 
 for (const arquivo of arquivos) {
   const entrada = path.join(pastaEntrada, arquivo);
-  const saida   = path.join(pastaSaida, path.parse(arquivo).name + '.webp');
+  const saida = path.join(pastaSaida, path.parse(arquivo).name + ".webp");
 
   await sharp(entrada)
     .resize({ width: 1920, withoutEnlargement: true })
@@ -140,7 +144,7 @@ npm install -D vite-plugin-imagemin
 
 ```js
 // vite.config.js
-import imagemin from 'vite-plugin-imagemin';
+import imagemin from "vite-plugin-imagemin";
 
 export default {
   plugins: [
@@ -149,8 +153,8 @@ export default {
       webp: { quality: 82 },
       mozjpeg: { quality: 80 },
       pngquant: { quality: [0.8, 0.9] },
-    })
-  ]
+    }),
+  ],
 };
 ```
 
@@ -159,12 +163,12 @@ export default {
 ## 6. Metas de Qualidade e Tamanho
 
 | Tipo                    | Tamanho Máximo Recomendado | Qualidade WebP |
-|-------------------------|---------------------------|----------------|
-| Hero / Banner           | < 200 KB                  | 80-85%         |
-| Foto de produto / card  | < 80 KB                   | 78-82%         |
-| Thumbnail               | < 30 KB                   | 70-75%         |
-| Foto para redes sociais | < 500 KB                  | 85-90%         |
-| Imagem de fundo         | < 150 KB                  | 75-80%         |
+| ----------------------- | -------------------------- | -------------- |
+| Hero / Banner           | < 200 KB                   | 80-85%         |
+| Foto de produto / card  | < 80 KB                    | 78-82%         |
+| Thumbnail               | < 30 KB                    | 70-75%         |
+| Foto para redes sociais | < 500 KB                   | 85-90%         |
+| Imagem de fundo         | < 150 KB                   | 75-80%         |
 
 ---
 
@@ -172,20 +176,20 @@ export default {
 
 ```js
 // Ler metadados com Sharp
-const metadata = await sharp('foto.jpg').metadata();
+const metadata = await sharp("foto.jpg").metadata();
 console.log(metadata); // { width, height, format, size, exif, ... }
 
 // Remover todos os metadados
-await sharp('foto.jpg')
-  .withMetadata(false)  // remove EXIF
+await sharp("foto.jpg")
+  .withMetadata(false) // remove EXIF
   .webp({ quality: 82 })
-  .toFile('foto-sem-exif.webp');
+  .toFile("foto-sem-exif.webp");
 
 // Preservar apenas dados de cor (sem GPS/dados pessoais)
-await sharp('foto.jpg')
+await sharp("foto.jpg")
   .withMetadata({ icc: true })
   .webp({ quality: 82 })
-  .toFile('foto-segura.webp');
+  .toFile("foto-segura.webp");
 ```
 
 ---
@@ -193,6 +197,7 @@ await sharp('foto.jpg')
 ## 8. Regras Obrigatórias
 
 > [!IMPORTANT]
+>
 > - **Nunca sobrescrever o original**: sempre salvar em pasta separada ou com sufixo.
 > - **Sempre usar `withoutEnlargement: true`** ao redimensionar para evitar upscaling.
 > - **Verificar dimensões mínimas** antes de gerar thumbnails (evitar artefatos).

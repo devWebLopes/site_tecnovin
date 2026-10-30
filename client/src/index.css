@@ -72,9 +72,11 @@
 }
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 body {
   margin: 0;
+  overflow-x: hidden;
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-sans);
@@ -3867,6 +3869,7 @@ input:focus-visible {
 
 /* ============================================================
    TABELA COMPARATIVA DE CONCENTRADOS (GEO / AI Search)
+   Fluida e sem scroll horizontal no desktop; cards no mobile
    ============================================================ */
 .portfolio-table-wrap {
   margin-top: 4.5rem;
@@ -3901,40 +3904,41 @@ input:focus-visible {
 }
 
 .portfolio-table-scroll {
-  overflow-x: auto;
+  width: 100%;
   border: 1px solid rgba(216, 177, 140, 0.24);
   background: rgba(26, 14, 18, 0.82);
+  overflow: hidden;
 }
 
 .portfolio-comparison-table {
   width: 100%;
-  min-width: 980px;
   border-collapse: collapse;
   color: #faf8f5;
-  font-size: 0.85rem;
+  font-size: 0.82rem;
   font-variant-numeric: tabular-nums;
   text-align: left;
+  table-layout: auto;
 }
 
 .portfolio-comparison-table th {
   background: rgba(197, 160, 89, 0.11);
   border-bottom: 1px solid rgba(197, 160, 89, 0.25);
   color: #dfc186;
-  font-size: 0.7rem;
+  font-size: 0.68rem;
   font-weight: 600;
-  letter-spacing: 0.16em;
-  padding: 1.05rem 1.15rem;
+  letter-spacing: 0.12em;
+  padding: 0.95rem 0.85rem;
   text-transform: uppercase;
-  white-space: nowrap;
+  line-height: 1.35;
+  vertical-align: bottom;
 }
 
 .portfolio-comparison-table td {
   border-bottom: 1px solid rgba(216, 177, 140, 0.11);
   color: rgba(250, 248, 245, 0.9);
-  line-height: 1.4;
-  padding: 1.05rem 1.15rem;
+  line-height: 1.35;
+  padding: 0.95rem 0.85rem;
   vertical-align: middle;
-  white-space: nowrap;
 }
 
 .portfolio-comparison-table tbody tr:last-child td {
@@ -3945,8 +3949,9 @@ input:focus-visible {
   background: rgba(197, 160, 89, 0.05);
 }
 
+.portfolio-table-th-product,
 .portfolio-table-col-product {
-  white-space: nowrap;
+  width: 22%;
 }
 
 .portfolio-table-product-link {
@@ -3955,8 +3960,8 @@ input:focus-visible {
   text-decoration: none;
   display: inline-flex;
   align-items: center;
-  gap: 0.45rem;
-  white-space: nowrap;
+  gap: 0.35rem;
+  line-height: 1.3;
   transition: color 200ms ease;
 }
 
@@ -3977,7 +3982,9 @@ input:focus-visible {
   transform: translate(2px, -2px);
 }
 
+.portfolio-table-th-code,
 .portfolio-table-col-code {
+  width: 9%;
   white-space: nowrap;
 }
 
@@ -3986,18 +3993,35 @@ input:focus-visible {
   border: 1px solid rgba(197, 160, 89, 0.32);
   color: #dfc186;
   display: inline-block;
-  font-size: 0.68rem;
+  font-size: 0.66rem;
   font-weight: 600;
-  letter-spacing: 0.12em;
-  padding: 0.24rem 0.58rem;
+  letter-spacing: 0.1em;
+  padding: 0.22rem 0.48rem;
   text-transform: uppercase;
   white-space: nowrap;
 }
 
+.portfolio-table-th-brix,
 .portfolio-table-brix {
+  width: 13%;
   color: #faf8f5;
   font-weight: 600;
   white-space: nowrap;
+}
+
+.portfolio-table-th-acidity,
+.portfolio-table-col-acidity {
+  width: 20%;
+}
+
+.portfolio-table-th-storage,
+.portfolio-table-col-storage {
+  width: 18%;
+}
+
+.portfolio-table-th-package,
+.portfolio-table-col-package {
+  width: 18%;
 }
 
 .portfolio-table-cell-stack {
@@ -4009,13 +4033,107 @@ input:focus-visible {
 .portfolio-table-primary {
   color: #faf8f5;
   font-weight: 500;
-  white-space: nowrap;
+  line-height: 1.35;
 }
 
 .portfolio-table-sub {
   color: rgba(250, 248, 245, 0.62);
-  font-size: 0.76rem;
-  white-space: nowrap;
+  font-size: 0.74rem;
+  line-height: 1.35;
+}
+
+/* ============================================================
+   RESPONSIVIDADE: Mobile e Tablet (< 860px)
+   Layout em cards elegantes sem scrollbar horizontal
+   ============================================================ */
+@media (max-width: 860px) {
+  .portfolio-table-scroll {
+    border: none;
+    background: transparent;
+    overflow: visible;
+  }
+
+  .portfolio-comparison-table thead {
+    display: none;
+  }
+
+  .portfolio-comparison-table,
+  .portfolio-comparison-table tbody,
+  .portfolio-comparison-table tr,
+  .portfolio-comparison-table td {
+    display: block;
+    width: 100%;
+  }
+
+  .portfolio-comparison-table tr {
+    background: rgba(26, 14, 18, 0.88);
+    border: 1px solid rgba(216, 177, 140, 0.24);
+    margin-bottom: 1.25rem;
+    padding: 1.25rem;
+  }
+
+  .portfolio-comparison-table tr:last-child {
+    margin-bottom: 0;
+  }
+
+  .portfolio-comparison-table td {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 0.65rem 0;
+    border-bottom: 1px solid rgba(216, 177, 140, 0.1);
+    text-align: right;
+    width: 100%;
+  }
+
+  .portfolio-comparison-table td:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  .portfolio-comparison-table td.portfolio-table-col-product {
+    padding-top: 0;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid rgba(197, 160, 89, 0.28);
+    margin-bottom: 0.35rem;
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
+  }
+
+  .portfolio-comparison-table td::before {
+    content: attr(data-label);
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #dfc186;
+    text-align: left;
+    flex-shrink: 0;
+    padding-top: 0.15rem;
+  }
+
+  .portfolio-comparison-table td.portfolio-table-col-product::before {
+    display: none;
+  }
+
+  .portfolio-comparison-table
+    td.portfolio-table-col-product
+    .portfolio-table-product-link {
+    font-size: 1.05rem;
+    color: #fff8ef;
+    font-weight: 600;
+  }
+
+  .portfolio-comparison-table td .portfolio-table-cell-stack {
+    align-items: flex-end;
+    text-align: right;
+  }
+
+  .portfolio-comparison-table td.portfolio-table-col-code {
+    text-align: right;
+  }
 }
 
 /* ============================================================

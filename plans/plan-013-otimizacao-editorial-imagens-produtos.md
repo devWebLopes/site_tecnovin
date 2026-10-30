@@ -5,11 +5,11 @@
 A seção "Portfólio para criar / A fruta em sua forma mais versátil" na Home (`client/src/pages/Home.tsx`) e as páginas individuais de produtos (`client/src/pages/Produto.tsx` / `client/src/lib/produtos.ts`) apresentavam inconsistências críticas de direção de arte:
 
 1. **Disparidade de Iluminação e Cenário:**
-   - Card 02 (Maçã): Foto externa em pomar rústico com clarão solar estourado (*golden hour flare*) e caixote de feira, destoando totalmente do estúdio escuro.
+   - Card 02 (Maçã): Foto externa em pomar rústico com clarão solar estourado (_golden hour flare_) e caixote de feira, destoando totalmente do estúdio escuro.
    - Card 01 (Uva) e Card 05 (Acerola): Galhos escuros em ambientes rústicos desiguais.
    - Card 03 (Laranja): Cozinha com tábua de madeira rústica e tigela cerâmica.
    - Card 04 (Limão) e Card 06 (Abacaxi): Ardósia escura de estúdio.
-   Essa mistura quebrava a estética canônica clássica e minimalista (`skills/classic-minimalist-ui/SKILL.md`).
+     Essa mistura quebrava a estética canônica clássica e minimalista (`skills/classic-minimalist-ui/SKILL.md`).
 
 2. **Desconexão com o Negócio B2B da Tecnovin:**
    - As fotos anteriores mostravam apenas frutas in natura de mercearia, sem representar o produto industrial nobre da empresa: **sucos concentrados de alto Brix (65–70° Brix)**, viscosidade, pureza analítica e vidraria técnica de alta gastronomia / laboratório.
@@ -42,4 +42,3 @@ A seção "Portfólio para criar / A fruta em sua forma mais versátil" na Home 
 - [ ] **Integração e Validação no Código:**
   - Atualização dos metadados `imageAlt` em `client/src/pages/Home.tsx` e `client/src/lib/produtos.ts`.
   - Execução de `pnpm check`, `pnpm build` e visualização.
-

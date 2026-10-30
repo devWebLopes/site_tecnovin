@@ -13,7 +13,7 @@ Modelos geradores de imagem tendem a produzir superfícies excessivamente lisas 
 1. **Sujeito e Anatomia Material** (geometria real, variedade botânica/industrial, estado físico)
 2. **Micro-Imperfeições Orgânicas** (textura submilimétrica, poeira, condensação, desgaste natural)
 3. **Superfície de Apoio e Contexto Espacial** (materiais autênticos, sem objetos flutuantes)
-4. **Arquitetura de Iluminação e Comportamento da Luz** (direção, temperatura Kelvin, modificadores, refração, *subsurface scattering*)
+4. **Arquitetura de Iluminação e Comportamento da Luz** (direção, temperatura Kelvin, modificadores, refração, _subsurface scattering_)
 5. **Sistema Óptico de Captura** (corpo da câmera, lente exata, distância focal, abertura `f/`, plano focal, filme/sensor)
 6. **Restrições Anti-IA (Negative Constraints)** (eliminação explícita de artefatos sintéticos, textos alucinados e CGI)
 
@@ -37,13 +37,13 @@ Modelos geradores de imagem tendem a produzir superfícies excessivamente lisas 
 
 Escolha sempre a combinação câmera + lente que um fotógrafo especializado usaria na vida real para aquele assunto:
 
-| Assunto Fotográfico                         | Câmera / Sensor de Referência                | Lente & Distância Focal                 | Abertura Ideal | Característica Óptica Principal                                                                 |
-| ------------------------------------------- | -------------------------------------------- | --------------------------------------- | -------------- | ----------------------------------------------------------------------------------------------- |
-| **Still Life Editorial / Hero de Produto**  | Hasselblad H6D-100c (Médio Formato 100MP)    | HC 120mm f/4 Macro II ou 80mm f/2.8     | `f/4` a `f/5.6`| Transição tonal cremosa (16-bit color depth), nitidez cirúrgica no centro, desfoque orgânico.   |
-| **Macro de Texturas, Cristais & Gotas**     | Phase One IQ4 150MP ou Sony A7R V            | 90mm f/2.8 Macro G OSS (1:1)            | `f/5.6` a `f/8`| Micro-contraste extremo, resolução de grãos cristalinos, poros da casca e nervuras de folhas.   |
-| **Gastronomia, Bebidas & Líquidos**         | Canon EOS R5 ou Leica SL2-S                  | 85mm f/1.4L ou 50mm f/1.2 Noctilux      | `f/2.0` a `f/4`| Bokeh circular suave, separação tridimensional do sujeito e refração cristalina em vidraria.    |
-| **Planta Industrial, Tanques & Arquitetura**| Cambo Actus + Digital Back ou Canon R5       | 24mm f/3.5L TS-E II (Tilt-Shift)        | `f/8` a `f/11` | Linhas verticais 100% paralelas (sem distorção de perspectiva), nitidez profunda (*deep focus*).|
-| **Paisagem / Vinhedos / Terroir**           | Fujifilm GFX 100 II (Médio Formato)          | GF 32-64mm f/4 ou GF 55mm f/1.7         | `f/8` a `f/11` | Alcance dinâmico de 14+ stops (preserva detalhes nas sombras das parreiras e nas altas luzes).  |
+| Assunto Fotográfico                          | Câmera / Sensor de Referência             | Lente & Distância Focal             | Abertura Ideal  | Característica Óptica Principal                                                                  |
+| -------------------------------------------- | ----------------------------------------- | ----------------------------------- | --------------- | ------------------------------------------------------------------------------------------------ |
+| **Still Life Editorial / Hero de Produto**   | Hasselblad H6D-100c (Médio Formato 100MP) | HC 120mm f/4 Macro II ou 80mm f/2.8 | `f/4` a `f/5.6` | Transição tonal cremosa (16-bit color depth), nitidez cirúrgica no centro, desfoque orgânico.    |
+| **Macro de Texturas, Cristais & Gotas**      | Phase One IQ4 150MP ou Sony A7R V         | 90mm f/2.8 Macro G OSS (1:1)        | `f/5.6` a `f/8` | Micro-contraste extremo, resolução de grãos cristalinos, poros da casca e nervuras de folhas.    |
+| **Gastronomia, Bebidas & Líquidos**          | Canon EOS R5 ou Leica SL2-S               | 85mm f/1.4L ou 50mm f/1.2 Noctilux  | `f/2.0` a `f/4` | Bokeh circular suave, separação tridimensional do sujeito e refração cristalina em vidraria.     |
+| **Planta Industrial, Tanques & Arquitetura** | Cambo Actus + Digital Back ou Canon R5    | 24mm f/3.5L TS-E II (Tilt-Shift)    | `f/8` a `f/11`  | Linhas verticais 100% paralelas (sem distorção de perspectiva), nitidez profunda (_deep focus_). |
+| **Paisagem / Vinhedos / Terroir**            | Fujifilm GFX 100 II (Médio Formato)       | GF 32-64mm f/4 ou GF 55mm f/1.7     | `f/8` a `f/11`  | Alcance dinâmico de 14+ stops (preserva detalhes nas sombras das parreiras e nas altas luzes).   |
 
 ---
 
@@ -52,15 +52,21 @@ Escolha sempre a combinação câmera + lente que um fotógrafo especializado us
 Para que o modelo de IA calcule a luz como fotografia real e não como ilustração:
 
 ### 3.1. Subsurface Scattering (SSS — Espalhamento Subsuperficial)
+
 Essencial para frutas, uvas, gomos de cítricos, folhas verdes, polpas e cera:
+
 - **Termos obrigatórios no prompt:** `realistic subsurface scattering through translucent fruit flesh`, `backlit skin translucency`, `internal glow where directional sunlight hits the berry`.
 
 ### 3.2. Índice de Refração (IOR), Cáusticas e Menisco (Líquidos e Vidros)
+
 Essencial para sucos concentrados, béqueres, garrafas e cálices:
+
 - **Termos obrigatórios no prompt:** `physically accurate glass refraction`, `natural liquid meniscus clinging to the inner borosilicate glass wall`, `warm amber caustic light patterns projected onto the stone surface`, `viscous high-Brix syrup texture with subtle surface tension`.
 
 ### 3.3. Reflexos Anisotrópicos (Metais e Aço Inoxidável)
+
 Essencial para tanques industriais, tubulações e bancadas de laboratório:
+
 - **Termos obrigatórios no prompt:** `brushed 316L stainless steel with realistic anisotropic specular highlights`, `subtle micro-scratches from industrial polishing`, `natural environmental reflections on curved metal surfaces`.
 
 ---
@@ -109,4 +115,3 @@ Photographic authenticity constraints: Shot on real medium-format optics, raw un
 - [ ] Há pelo menos 2 micro-imperfeições físicas descritas (ex.: pruína na uva, poros na casca, menisco no vidro)?
 - [ ] A direção da luz (lateral, contraluz, difusa) e a superfície de apoio estão definidas?
 - [ ] O bloco de restrições contra textos falsos (`NO text, NO labels, NO logos`) foi incluído?
-
