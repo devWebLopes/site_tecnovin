@@ -615,113 +615,276 @@ export default function Home() {
                   </thead>
                   <tbody>
                     <tr>
-                      <td>
+                      <td className="portfolio-table-col-product">
                         <Link
                           href="/produtos/concentrado-de-uva"
                           className="portfolio-table-product-link"
                         >
-                          Concentrado de Uva <ArrowUpRight size={14} />
+                          <span>Concentrado de Uva</span>
+                          <ArrowUpRight size={14} aria-hidden="true" />
                         </Link>
                       </td>
-                      <td>
+                      <td className="portfolio-table-col-code">
                         <span className="portfolio-table-code">GJC</span>
                       </td>
-                      <td>68,0 ± 0,5° Brix</td>
+                      <td className="portfolio-table-brix">68,0 ± 0,5° Brix</td>
                       <td>
-                        3,5 ± 1% (ácido tartárico) · Clarificado e polposo
+                        <div className="portfolio-table-cell-stack">
+                          <span className="portfolio-table-primary">
+                            3,5 ± 1% (ácido tartárico)
+                          </span>
+                          <span className="portfolio-table-sub">
+                            Clarificado e polposo
+                          </span>
+                        </div>
                       </td>
-                      <td>Até 5 °C (validade até 24 meses)</td>
-                      <td>Tambor de aço 265 kg (epóxi + duplo PE)</td>
+                      <td>
+                        <div className="portfolio-table-cell-stack">
+                          <span className="portfolio-table-primary">
+                            Até 5 °C
+                          </span>
+                          <span className="portfolio-table-sub">
+                            Validade até 24 meses
+                          </span>
+                        </div>
+                      </td>
+                      <td>
+                        <div className="portfolio-table-cell-stack">
+                          <span className="portfolio-table-primary">
+                            Tambor de aço 265 kg
+                          </span>
+                          <span className="portfolio-table-sub">
+                            Epóxi interno + duplo PE
+                          </span>
+                        </div>
+                      </td>
                     </tr>
                     <tr>
-                      <td>
+                      <td className="portfolio-table-col-product">
                         <Link
                           href="/produtos/concentrado-de-maca"
                           className="portfolio-table-product-link"
                         >
-                          Concentrado de Maçã <ArrowUpRight size={14} />
+                          <span>Concentrado de Maçã</span>
+                          <ArrowUpRight size={14} aria-hidden="true" />
                         </Link>
                       </td>
-                      <td>
+                      <td className="portfolio-table-col-code">
                         <span className="portfolio-table-code">AJC</span>
                       </td>
-                      <td>70,0 ± 0,5° Brix</td>
-                      <td>Transmitância 97–99% · 1,70 ± 0,5% (ácido málico)</td>
-                      <td>Até 5 °C (clarif.) / -20 °C (polposo)</td>
-                      <td>Tambor de aço 265 kg (epóxi + duplo PE)</td>
+                      <td className="portfolio-table-brix">70,0 ± 0,5° Brix</td>
+                      <td>
+                        <div className="portfolio-table-cell-stack">
+                          <span className="portfolio-table-primary">
+                            Transmitância 97–99%
+                          </span>
+                          <span className="portfolio-table-sub">
+                            1,70 ± 0,5% (ácido málico)
+                          </span>
+                        </div>
+                      </td>
+                      <td>
+                        <div className="portfolio-table-cell-stack">
+                          <span className="portfolio-table-primary">
+                            Até 5 °C (clarif.) / -20 °C (polp.)
+                          </span>
+                          <span className="portfolio-table-sub">
+                            Validade até 18 meses
+                          </span>
+                        </div>
+                      </td>
+                      <td>
+                        <div className="portfolio-table-cell-stack">
+                          <span className="portfolio-table-primary">
+                            Tambor de aço 265 kg
+                          </span>
+                          <span className="portfolio-table-sub">
+                            Epóxi interno + duplo PE
+                          </span>
+                        </div>
+                      </td>
                     </tr>
                     <tr>
-                      <td>
+                      <td className="portfolio-table-col-product">
                         <Link
                           href="/produtos/concentrado-de-laranja"
                           className="portfolio-table-product-link"
                         >
-                          Concentrado de Laranja Congelado{" "}
-                          <ArrowUpRight size={14} />
+                          <span>Concentrado de Laranja Congelado</span>
+                          <ArrowUpRight size={14} aria-hidden="true" />
                         </Link>
                       </td>
-                      <td>
+                      <td className="portfolio-table-col-code">
                         <span className="portfolio-table-code">FCOJ</span>
                       </td>
-                      <td>65,0 ± 0,5° Brix</td>
-                      <td>Ratio 8,5 ± 1,5 · 7 ± 2% (ácido cítrico)</td>
-                      <td>Abaixo de -18 °C (validade até 24 meses)</td>
-                      <td>Tambor de aço 260 kg (lotes até 18 t)</td>
+                      <td className="portfolio-table-brix">65,0 ± 0,5° Brix</td>
+                      <td>
+                        <div className="portfolio-table-cell-stack">
+                          <span className="portfolio-table-primary">
+                            Ratio 8,5 ± 1,5
+                          </span>
+                          <span className="portfolio-table-sub">
+                            7 ± 2% (ácido cítrico)
+                          </span>
+                        </div>
+                      </td>
+                      <td>
+                        <div className="portfolio-table-cell-stack">
+                          <span className="portfolio-table-primary">
+                            Abaixo de -18 °C
+                          </span>
+                          <span className="portfolio-table-sub">
+                            Validade até 24 meses
+                          </span>
+                        </div>
+                      </td>
+                      <td>
+                        <div className="portfolio-table-cell-stack">
+                          <span className="portfolio-table-primary">
+                            Tambor de aço 260 kg
+                          </span>
+                          <span className="portfolio-table-sub">
+                            Lotes de até 18 t
+                          </span>
+                        </div>
+                      </td>
                     </tr>
                     <tr>
-                      <td>
+                      <td className="portfolio-table-col-product">
                         <Link
                           href="/produtos/concentrado-de-limao"
                           className="portfolio-table-product-link"
                         >
-                          Concentrado de Limão <ArrowUpRight size={14} />
+                          <span>Concentrado de Limão</span>
+                          <ArrowUpRight size={14} aria-hidden="true" />
                         </Link>
                       </td>
-                      <td>
+                      <td className="portfolio-table-col-code">
                         <span className="portfolio-table-code">LEMON JC</span>
                       </td>
-                      <td>44,0 ± 3,0° Brix</td>
+                      <td className="portfolio-table-brix">44,0 ± 3,0° Brix</td>
                       <td>
-                        31,5 ± 2,5% (ácido cítrico) · Vit. C 142,5 mg/100ml
+                        <div className="portfolio-table-cell-stack">
+                          <span className="portfolio-table-primary">
+                            31,5 ± 2,5% (ácido cítrico)
+                          </span>
+                          <span className="portfolio-table-sub">
+                            Vit. C 142,5 mg/100ml
+                          </span>
+                        </div>
                       </td>
-                      <td>-20 °C (validade até 18 meses)</td>
-                      <td>Tambor de aço 230 kg (lotes até 16 t)</td>
+                      <td>
+                        <div className="portfolio-table-cell-stack">
+                          <span className="portfolio-table-primary">
+                            -20 °C
+                          </span>
+                          <span className="portfolio-table-sub">
+                            Validade até 18 meses
+                          </span>
+                        </div>
+                      </td>
+                      <td>
+                        <div className="portfolio-table-cell-stack">
+                          <span className="portfolio-table-primary">
+                            Tambor de aço 230 kg
+                          </span>
+                          <span className="portfolio-table-sub">
+                            Lotes de até 16 t
+                          </span>
+                        </div>
+                      </td>
                     </tr>
                     <tr>
-                      <td>
+                      <td className="portfolio-table-col-product">
                         <Link
                           href="/produtos/concentrado-de-acerola"
                           className="portfolio-table-product-link"
                         >
-                          Concentrado de Acerola <ArrowUpRight size={14} />
+                          <span>Concentrado de Acerola</span>
+                          <ArrowUpRight size={14} aria-hidden="true" />
                         </Link>
                       </td>
-                      <td>
+                      <td className="portfolio-table-col-code">
                         <span className="portfolio-table-code">ACEROLA JC</span>
                       </td>
-                      <td>Sob consulta</td>
-                      <td>Alto teor natural de ácido ascórbico (Vitamina C)</td>
-                      <td>Cadeia de frio controlada</td>
-                      <td>Fornecimento industrial B2B</td>
+                      <td className="portfolio-table-brix">Sob consulta</td>
+                      <td>
+                        <div className="portfolio-table-cell-stack">
+                          <span className="portfolio-table-primary">
+                            Alto teor de ácido ascórbico
+                          </span>
+                          <span className="portfolio-table-sub">
+                            Fonte natural de Vitamina C
+                          </span>
+                        </div>
+                      </td>
+                      <td>
+                        <div className="portfolio-table-cell-stack">
+                          <span className="portfolio-table-primary">
+                            Cadeia de frio controlada
+                          </span>
+                          <span className="portfolio-table-sub">
+                            Especificação técnica B2B
+                          </span>
+                        </div>
+                      </td>
+                      <td>
+                        <div className="portfolio-table-cell-stack">
+                          <span className="portfolio-table-primary">
+                            Fornecimento industrial B2B
+                          </span>
+                          <span className="portfolio-table-sub">
+                            Condições sob consulta
+                          </span>
+                        </div>
+                      </td>
                     </tr>
                     <tr>
-                      <td>
+                      <td className="portfolio-table-col-product">
                         <Link
                           href="/produtos/concentrado-de-abacaxi"
                           className="portfolio-table-product-link"
                         >
-                          Concentrado de Abacaxi <ArrowUpRight size={14} />
+                          <span>Concentrado de Abacaxi</span>
+                          <ArrowUpRight size={14} aria-hidden="true" />
                         </Link>
                       </td>
-                      <td>
+                      <td className="portfolio-table-col-code">
                         <span className="portfolio-table-code">
                           PINEAPPLE JC
                         </span>
                       </td>
-                      <td>Sob consulta</td>
-                      <td>Equilíbrio sensorial tropical de doçura e acidez</td>
-                      <td>Cadeia de frio controlada</td>
-                      <td>Fornecimento industrial B2B</td>
+                      <td className="portfolio-table-brix">Sob consulta</td>
+                      <td>
+                        <div className="portfolio-table-cell-stack">
+                          <span className="portfolio-table-primary">
+                            Equilíbrio doce-ácido tropical
+                          </span>
+                          <span className="portfolio-table-sub">
+                            Perfil sensorial padronizado
+                          </span>
+                        </div>
+                      </td>
+                      <td>
+                        <div className="portfolio-table-cell-stack">
+                          <span className="portfolio-table-primary">
+                            Cadeia de frio controlada
+                          </span>
+                          <span className="portfolio-table-sub">
+                            Especificação técnica B2B
+                          </span>
+                        </div>
+                      </td>
+                      <td>
+                        <div className="portfolio-table-cell-stack">
+                          <span className="portfolio-table-primary">
+                            Fornecimento industrial B2B
+                          </span>
+                          <span className="portfolio-table-sub">
+                            Condições sob consulta
+                          </span>
+                        </div>
+                      </td>
                     </tr>
                   </tbody>
                 </table>

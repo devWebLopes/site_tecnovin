@@ -12,4 +12,3 @@ export {
 } from "./Reveal";
 export { StaggerGroup } from "./StaggerGroup";
 export { AnimatedLine, type AnimatedLineProps } from "./AnimatedLine";
-

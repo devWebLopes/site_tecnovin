@@ -72,4 +72,3 @@ Elevar o padrão visual e interativo do site institucional da **Tecnovin do Bras
    - Executar `pnpm format` (Prettier).
    - Executar `pnpm build` (Vite + esbuild).
    - Confirmar preservação integral dos fatos, fontes e rótulos históricos do dossiê.
-

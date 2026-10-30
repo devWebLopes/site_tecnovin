@@ -5,4 +5,3 @@ export {
   type StaggerContainerProps,
   type StaggerItemProps,
 } from "./Reveal";
-

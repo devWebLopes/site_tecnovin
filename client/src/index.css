@@ -3908,30 +3908,33 @@ input:focus-visible {
 
 .portfolio-comparison-table {
   width: 100%;
+  min-width: 980px;
   border-collapse: collapse;
-  color: #fff8ef;
-  font-size: 0.86rem;
+  color: #faf8f5;
+  font-size: 0.85rem;
+  font-variant-numeric: tabular-nums;
   text-align: left;
 }
 
 .portfolio-comparison-table th {
-  background: rgba(216, 177, 140, 0.12);
-  border-bottom: 1px solid rgba(216, 177, 140, 0.25);
-  color: #d8b18c;
-  font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  padding: 1rem 1.2rem;
+  background: rgba(197, 160, 89, 0.11);
+  border-bottom: 1px solid rgba(197, 160, 89, 0.25);
+  color: #dfc186;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  padding: 1.05rem 1.15rem;
   text-transform: uppercase;
   white-space: nowrap;
 }
 
 .portfolio-comparison-table td {
-  border-bottom: 1px solid rgba(216, 177, 140, 0.12);
-  color: rgba(255, 248, 239, 0.88);
-  line-height: 1.45;
-  padding: 1rem 1.2rem;
+  border-bottom: 1px solid rgba(216, 177, 140, 0.11);
+  color: rgba(250, 248, 245, 0.9);
+  line-height: 1.4;
+  padding: 1.05rem 1.15rem;
   vertical-align: middle;
+  white-space: nowrap;
 }
 
 .portfolio-comparison-table tbody tr:last-child td {
@@ -3939,33 +3942,80 @@ input:focus-visible {
 }
 
 .portfolio-comparison-table tbody tr:hover td {
-  background: rgba(216, 177, 140, 0.06);
+  background: rgba(197, 160, 89, 0.05);
+}
+
+.portfolio-table-col-product {
+  white-space: nowrap;
 }
 
 .portfolio-table-product-link {
-  color: #fff8ef;
-  font-weight: 700;
+  color: #faf8f5;
+  font-weight: 600;
   text-decoration: none;
   display: inline-flex;
   align-items: center;
-  gap: 0.35rem;
-  transition: color 160ms ease;
+  gap: 0.45rem;
+  white-space: nowrap;
+  transition: color 200ms ease;
+}
+
+.portfolio-table-product-link svg {
+  flex-shrink: 0;
+  opacity: 0.75;
+  transition:
+    transform 220ms var(--ease-out),
+    opacity 200ms ease;
 }
 
 .portfolio-table-product-link:hover {
-  color: #d8b18c;
+  color: #dfc186;
+}
+
+.portfolio-table-product-link:hover svg {
+  opacity: 1;
+  transform: translate(2px, -2px);
+}
+
+.portfolio-table-col-code {
+  white-space: nowrap;
 }
 
 .portfolio-table-code {
-  background: rgba(216, 177, 140, 0.14);
-  border: 1px solid rgba(216, 177, 140, 0.3);
-  color: #d8b18c;
+  background: rgba(197, 160, 89, 0.12);
+  border: 1px solid rgba(197, 160, 89, 0.32);
+  color: #dfc186;
   display: inline-block;
-  font-size: 0.7rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  padding: 0.18rem 0.5rem;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  padding: 0.24rem 0.58rem;
   text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.portfolio-table-brix {
+  color: #faf8f5;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.portfolio-table-cell-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.portfolio-table-primary {
+  color: #faf8f5;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.portfolio-table-sub {
+  color: rgba(250, 248, 245, 0.62);
+  font-size: 0.76rem;
+  white-space: nowrap;
 }
 
 /* ============================================================
