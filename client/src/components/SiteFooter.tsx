@@ -52,12 +52,8 @@ export default function SiteFooter() {
             © {new Date().getFullYear()} Tecnovin do Brasil. Todos os direitos
             reservados.
           </span>
-          <a
-            href="https://www.tecnovin.com.br/politicas.html"
-            target="_blank"
-            rel="noreferrer"
-          >
-            Políticas e código de ética <ArrowUpRight size={13} />
+          <a href="/#qualidade">
+            Políticas e código de conduta <ArrowUpRight size={13} />
           </a>
           <a href="mailto:ouvidoria@tecnovin.com.br">Ouvidoria</a>
         </div>

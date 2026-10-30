@@ -13,6 +13,7 @@ export interface Artigo {
   slug: string;
   category: string;
   date: string;
+  dateIso: string;
   read: string;
   color: "wine" | "olive" | "coral" | "amber" | "forest" | "gold";
   featured?: boolean;
@@ -34,6 +35,7 @@ export const ARTIGOS: Artigo[] = [
     slug: "premio-exportacao-rs-2018",
     category: "Memória & notícias",
     date: "Registro público · 2018",
+    dateIso: "2018-05-17",
     read: "3 min",
     color: "wine",
     featured: true,
@@ -47,9 +49,9 @@ export const ARTIGOS: Artigo[] = [
     excerpt:
       "A Tecnovin do Brasil foi listada em Destaque Setorial — Bebidas na 46ª edição do Prêmio Exportação RS. Conteúdo com referência pública de origem.",
     seo: {
-      title: "Prêmio Exportação RS 2018 — Tecnovin do Brasil",
+      title: "Prêmio Exportação RS 2018 — Tecnovin do Brasil | Bebidas",
       description:
-        "A Tecnovin do Brasil foi listada em Destaque Setorial — Bebidas na 46ª edição do Prêmio Exportação RS, em 2018.",
+        "Registro histórico: a Tecnovin do Brasil foi listada na categoria Destaque Setorial — Bebidas na 46ª edição do Prêmio Exportação RS, em maio de 2018.",
       keywords: [
         "Tecnovin",
         "Prêmio Exportação RS",
@@ -101,6 +103,7 @@ export const ARTIGOS: Artigo[] = [
     slug: "tecnovitis-2023",
     category: "Memória & notícias",
     date: "Registro público · 2023",
+    dateIso: "2023-12-08",
     read: "3 min",
     color: "olive",
     image: "/images/blog/blog-tecnovitis-2023.jpg",
@@ -112,9 +115,9 @@ export const ARTIGOS: Artigo[] = [
     excerpt:
       "Tecnovin e Suvalan foram citadas como patrocinadoras Prata da 5ª Tecnovitis em Bento Gonçalves, conforme fonte oficial do município.",
     seo: {
-      title: "Tecnovitis 2023 — Tecnovin e Suvalan na feira de viticultura",
+      title: "5ª Tecnovitis 2023 — Tecnovin e Suvalan na Serra Gaúcha",
       description:
-        "Tecnovin e Suvalan participaram como patrocinadoras Prata da 5ª Tecnovitis, em Bento Gonçalves, em dezembro de 2023.",
+        "Registro público: Tecnovin e Suvalan participaram como patrocinadoras Prata da 5ª Tecnovitis, feira de viticultura e fruticultura em Bento Gonçalves (2023).",
       keywords: [
         "Tecnovitis 2023",
         "Tecnovin",
@@ -170,6 +173,7 @@ export const ARTIGOS: Artigo[] = [
     slug: "o-ingrediente-certo-carrega-uma-historia",
     category: "Perspectivas Tecnovin",
     date: "Carta do time",
+    dateIso: "2026-09-08",
     read: "3 min",
     color: "coral",
     image: "/images/blog/blog-ingrediente-certo-carrega-historia.jpg",
@@ -179,9 +183,9 @@ export const ARTIGOS: Artigo[] = [
     excerpt:
       "Porque procedência, território e parceria importam tanto quanto o resultado no produto final.",
     seo: {
-      title: "O ingrediente certo também carrega uma história — Tecnovin",
+      title: "O ingrediente certo carrega uma história — Tecnovin RS",
       description:
-        "Por que procedência, território e parceria importam tanto quanto o resultado no produto final.",
+        "Entenda por que procedência, território no Vale dos Vinhedos e parceria com produtores importam tanto quanto o laudo técnico no produto final industrial.",
       keywords: [
         "Ingredientes naturais",
         "Procedência",
@@ -231,6 +235,7 @@ export const ARTIGOS: Artigo[] = [
     slug: "mapa-de-possibilidades-uva-maca-laranja",
     category: "Portfólio",
     date: "Guia rápido",
+    dateIso: "2026-09-08",
     read: "6 min",
     color: "amber",
     image: "/images/blog/blog-mapa-possibilidades-portfolio.jpg",
@@ -240,9 +245,9 @@ export const ARTIGOS: Artigo[] = [
     excerpt:
       "Um olhar direto para as famílias de concentrados que ajudam a tirar novas ideias do papel.",
     seo: {
-      title: "Uva, maçã, laranja e mais: um mapa de possibilidades — Tecnovin",
+      title: "Uva, maçã e laranja: mapa de concentrados — Tecnovin RS",
       description:
-        "Guia rápido pelas famílias de concentrados de fruta que ajudam a transformar ideias em produto.",
+        "Guia técnico pelas famílias de sucos concentrados de uva (GJC), maçã (AJC), laranja (FCOJ), limão, acerola e abacaxi para formulação industrial de bebidas.",
       keywords: [
         "Concentrado de fruta",
         "Suco de uva concentrado",
@@ -307,6 +312,7 @@ export const ARTIGOS: Artigo[] = [
     slug: "o-valor-de-saber-de-onde-vem-cada-escolha",
     category: "Cadeia & origem",
     date: "Em pauta",
+    dateIso: "2026-09-08",
     read: "4 min",
     color: "forest",
     image: "/images/blog/blog-valor-saber-de-onde-vem-escolha.jpg",
@@ -318,7 +324,7 @@ export const ARTIGOS: Artigo[] = [
     seo: {
       title: "O valor de saber de onde vem cada escolha — Tecnovin",
       description:
-        "Rastrear decisões é também construir relações mais transparentes ao longo da cadeia de ingredientes.",
+        "Rastreabilidade, boas práticas agrícolas e cooperação técnica na cadeia de sucos concentrados de frutas da Tecnovin no Vale dos Vinhedos, Bento Gonçalves.",
       keywords: [
         "Rastreabilidade",
         "Cadeia produtiva",
@@ -369,6 +375,7 @@ export const ARTIGOS: Artigo[] = [
     slug: "formulacao-equilibrio-sabor-e-escala",
     category: "Mercado & aplicações",
     date: "Observatório",
+    dateIso: "2026-09-08",
     read: "5 min",
     color: "gold",
     image: "/images/blog/blog-formulacao-equilibrio-sabor-escala.jpg",
@@ -380,7 +387,7 @@ export const ARTIGOS: Artigo[] = [
     seo: {
       title: "Formulação: equilíbrio entre sabor e escala — Tecnovin",
       description:
-        "Pontos para considerar ao escolher uma base de fruta para bebidas e alimentos industriais.",
+        "Critérios técnicos de engenharia de alimentos ao escolher sucos concentrados: relação ratio Brix/acidez, clarificação e eficiência logística industrial B2B.",
       keywords: [
         "Formulação de bebidas",
         "Graus Brix",

@@ -8,13 +8,48 @@ import {
   Search,
   X,
 } from "lucide-react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { toast } from "sonner";
 import { Link } from "wouter";
+import SeoHead from "@/components/SeoHead";
 import SiteFooter from "@/components/SiteFooter";
 import SiteHeader from "@/components/SiteHeader";
 
 import { ARTIGOS } from "@/lib/artigos";
+import { BLOG_SEO, SITE_URL } from "@/lib/seo";
+
+const blogSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "CollectionPage",
+      "@id": `${SITE_URL}/blog#webpage`,
+      url: `${SITE_URL}/blog`,
+      name: BLOG_SEO.title,
+      description: BLOG_SEO.description,
+      inLanguage: "pt-BR",
+      isPartOf: { "@id": `${SITE_URL}/#website` },
+      about: { "@id": `${SITE_URL}/#organization` },
+    },
+    {
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: "Início",
+          item: `${SITE_URL}/`,
+        },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: "Conteúdos",
+          item: `${SITE_URL}/blog`,
+        },
+      ],
+    },
+  ],
+};
 
 const categories = [
   "Todos",
@@ -29,6 +64,14 @@ export default function Blog() {
   const [activeCategory, setActiveCategory] = useState("Todos");
   const [query, setQuery] = useState("");
   const [email, setEmail] = useState("");
+
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const qParam = params.get("q");
+    if (qParam) {
+      setQuery(qParam);
+    }
+  }, []);
 
   const normalizedQuery = query.trim().toLowerCase();
   const filteredPosts = ARTIGOS.filter(post => {
@@ -52,6 +95,12 @@ export default function Blog() {
 
   return (
     <div className="min-h-screen bg-[#f7f4ef] text-[#251e1c]">
+      <SeoHead
+        title={BLOG_SEO.title}
+        description={BLOG_SEO.description}
+        path="/blog"
+        schema={blogSchema}
+      />
       <SiteHeader />
       <main>
         <section className="blog-hero">

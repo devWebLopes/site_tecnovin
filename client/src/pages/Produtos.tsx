@@ -7,28 +7,39 @@ import { Link } from "wouter";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import ProductCard from "@/components/ProductCard";
-import JsonLd from "@/components/JsonLd";
+import SeoHead from "@/components/SeoHead";
 import { PRODUTOS } from "@/lib/produtos";
+import { PRODUTOS_SEO, SITE_URL } from "@/lib/seo";
 
-const PAGE_TITLE = "Portfólio de Concentrados — Tecnovin do Brasil";
-const PAGE_DESCRIPTION =
-  "Concentrados de suco de uva, maçã, laranja, limão, acerola e abacaxi para a indústria de alimentos e bebidas. Fornecedor B2B no Vale dos Vinhedos, RS.";
-
-const breadcrumbSchema = {
+const produtosSchema = {
   "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  itemListElement: [
+  "@graph": [
     {
-      "@type": "ListItem",
-      position: 1,
-      name: "Home",
-      item: "https://tecnovin.com.br/",
+      "@type": "CollectionPage",
+      "@id": `${SITE_URL}/produtos#webpage`,
+      url: `${SITE_URL}/produtos`,
+      name: PRODUTOS_SEO.title,
+      description: PRODUTOS_SEO.description,
+      inLanguage: "pt-BR",
+      isPartOf: { "@id": `${SITE_URL}/#website` },
+      about: { "@id": `${SITE_URL}/#organization` },
     },
     {
-      "@type": "ListItem",
-      position: 2,
-      name: "Produtos",
-      item: "https://tecnovin.com.br/produtos",
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: "Home",
+          item: `${SITE_URL}/`,
+        },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: "Produtos",
+          item: `${SITE_URL}/produtos`,
+        },
+      ],
     },
   ],
 };
@@ -36,14 +47,12 @@ const breadcrumbSchema = {
 export default function Produtos() {
   return (
     <>
-      {/* SEO */}
-      <title>{PAGE_TITLE}</title>
-      <meta name="description" content={PAGE_DESCRIPTION} />
-      <link rel="canonical" href="https://tecnovin.com.br/produtos" />
-      <meta property="og:title" content={PAGE_TITLE} />
-      <meta property="og:description" content={PAGE_DESCRIPTION} />
-      <meta property="og:type" content="website" />
-      <JsonLd data={breadcrumbSchema} />
+      <SeoHead
+        title={PRODUTOS_SEO.title}
+        description={PRODUTOS_SEO.description}
+        path="/produtos"
+        schema={produtosSchema}
+      />
 
       <SiteHeader />
 

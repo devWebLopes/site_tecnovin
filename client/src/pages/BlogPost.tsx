@@ -13,13 +13,14 @@ import {
 import { toast } from "sonner";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
-import JsonLd from "@/components/JsonLd";
+import SeoHead from "@/components/SeoHead";
 import BlogPostNav from "@/components/BlogPostNav";
 import {
   ARTIGOS_MAP,
   getArtigoNavigation,
   type ArtigoSection,
 } from "@/lib/artigos";
+import { SITE_URL } from "@/lib/seo";
 
 function RenderSection({ section }: { section: ArtigoSection }) {
   switch (section.type) {
@@ -128,21 +129,32 @@ export default function BlogPost() {
   // --- JSON-LD Schemas ---
   const articleSchema = {
     "@context": "https://schema.org",
-    "@type": "Article",
+    "@type": "BlogPosting",
     headline: artigo.title,
     description: artigo.excerpt,
-    image: `https://tecnovin.com.br${artigo.image}`,
+    image: `${SITE_URL}${artigo.image}`,
     author: {
       "@type": "Organization",
+      "@id": `${SITE_URL}/#organization`,
       name: "Tecnovin do Brasil",
     },
     publisher: {
       "@type": "Organization",
+      "@id": `${SITE_URL}/#organization`,
       name: "Tecnovin do Brasil Ltda.",
-      url: "https://tecnovin.com.br",
+      url: `${SITE_URL}/`,
+      logo: {
+        "@type": "ImageObject",
+        url: `${SITE_URL}/apple-touch-icon.png`,
+      },
     },
-    datePublished: artigo.date,
-    url: `https://tecnovin.com.br/blog/${artigo.slug}`,
+    datePublished: artigo.dateIso,
+    dateModified: "2026-10-29",
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": `${SITE_URL}/blog/${artigo.slug}`,
+    },
+    url: `${SITE_URL}/blog/${artigo.slug}`,
   };
 
   const breadcrumbSchema = {
@@ -153,19 +165,19 @@ export default function BlogPost() {
         "@type": "ListItem",
         position: 1,
         name: "Início",
-        item: "https://tecnovin.com.br/",
+        item: `${SITE_URL}/`,
       },
       {
         "@type": "ListItem",
         position: 2,
         name: "Conteúdos",
-        item: "https://tecnovin.com.br/blog",
+        item: `${SITE_URL}/blog`,
       },
       {
         "@type": "ListItem",
         position: 3,
         name: artigo.title,
-        item: `https://tecnovin.com.br/blog/${artigo.slug}`,
+        item: `${SITE_URL}/blog/${artigo.slug}`,
       },
     ],
   };
@@ -174,26 +186,16 @@ export default function BlogPost() {
 
   return (
     <div className="min-h-screen bg-[#f7f4ef] text-[#251e1c]">
-      {/* SEO meta tags */}
-      <title>{artigo.seo.title}</title>
-      <meta name="description" content={artigo.seo.description} />
-      <meta name="keywords" content={artigo.seo.keywords.join(", ")} />
-      <link
-        rel="canonical"
-        href={`https://tecnovin.com.br/blog/${artigo.slug}`}
+      <SeoHead
+        title={artigo.seo.title}
+        description={artigo.seo.description}
+        path={`/blog/${artigo.slug}`}
+        type="article"
+        image={artigo.image}
+        imageAlt={artigo.imageAlt}
+        keywords={artigo.seo.keywords}
+        schema={schemas}
       />
-      <meta property="og:title" content={artigo.seo.title} />
-      <meta property="og:description" content={artigo.seo.description} />
-      <meta
-        property="og:image"
-        content={`https://tecnovin.com.br${artigo.image}`}
-      />
-      <meta property="og:type" content="article" />
-      <meta
-        property="og:url"
-        content={`https://tecnovin.com.br/blog/${artigo.slug}`}
-      />
-      <JsonLd data={schemas} />
 
       <SiteHeader />
 

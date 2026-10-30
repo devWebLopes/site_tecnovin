@@ -1,0 +1,68 @@
+# Tecnovin do Brasil
+
+> Indústria brasileira de sucos concentrados de frutas para os mercados B2B de alimentos, bebidas, cosméticos e indústria química. Localizada no Vale dos Vinhedos, em Bento Gonçalves, Rio Grande do Sul, Brasil.
+
+## Identificação Institucional
+
+- **Razão Social:** Tecnovin do Brasil Ltda.
+- **Nome Comercial:** Tecnovin do Brasil / TECNOVIN-SUMABRAS
+- **CNPJ (Matriz):** 92.320.233/0001-90
+- **Data de Fundação:** 12 de setembro de 1988
+- **CNAE Principal:** 10.33-3-01 — Fabricação de sucos concentrados de frutas, hortaliças e legumes
+- **Endereço Sede:** Linha Leopoldina, s/n, Km 6 — Distrito Vale dos Vinhedos, Bento Gonçalves/RS, CEP 95711-970, Brasil
+- **Telefone Oficial:** +55 (54) 2102-1999
+- **E-mail Comercial:** tecnovin@tecnovin.com.br
+- **Ouvidoria:** ouvidoria@tecnovin.com.br
+- **Site Oficial:** https://www.tecnovin.com.br/
+- **Ambiente Web Institucional:** https://site-tecnovin.vercel.app/
+
+## Proposta de Valor e Atuação B2B
+
+A Tecnovin do Brasil transforma frutas selecionadas em sucos concentrados padronizados para clientes industriais (B2B). A operação combina proximidade às regiões produtoras da Serra Gaúcha com controle físico-químico e microbiológico de graus Brix, acidez titulável, pH, ratio, cor e transmitância.
+
+## Portfólio de Concentrados de Frutas (B2B)
+
+| Ingrediente | Sigla | Graus Brix (Referência) | Acidez / Especificação Principal | Armazenamento | Embalagem Industrial |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **Concentrado de Uva** | GJC | 68,0 ± 0,5° Brix (clarificado) / 50–65° Brix (polposo) | 3,5 ± 1% (ácido tartárico) · Variedades Isabel, Concord, York Madeira e viníferas | Até 5 °C (validade até 24 meses) | Tambor de aço com epóxi e duplo liner PE (265 kg) |
+| **Concentrado de Maçã** | AJC | 70,0 ± 0,5° Brix (clarificado) / 40–45° Brix (polposo) | 1,70 ± 0,5% (ácido málico) · Transmitância 97–99% · pH 1,6 ± 0,7 | Até 5 °C (clarificado) / -20 °C (polposo) | Tambor de aço com epóxi e duplo liner PE (265 kg) |
+| **Concentrado de Laranja Congelado** | FCOJ | 65,0 ± 0,5° Brix | 7 ± 2% (ácido cítrico) · Ratio 8,5 ± 1,5 · Variedades Valência, Natal e Hamlin | Abaixo de -18 °C (validade até 24 meses) | Tambor de aço com epóxi e duplo liner PE (260 kg) |
+| **Concentrado de Limão** | LEMON JC | 44,0 ± 3,0° Brix | 31,5 ± 2,5% (ácido cítrico) · Vitamina C 142,5 ± 37,5 mg/100 ml · Siciliano e Tahiti | -20 °C (validade até 18 meses) | Tambor de aço com epóxi e duplo liner PE (230 kg) |
+| **Concentrado de Acerola** | ACEROLA JC | Sob consulta comercial | Alto teor natural de ácido ascórbico (Vitamina C) para bebidas e suplementos | Cadeia de frio industrial | Sob consulta comercial |
+| **Concentrado de Abacaxi** | PINEAPPLE JC | Sob consulta comercial | Equilíbrio tropical de doçura e acidez para néctares, blends e alimentos | Cadeia de frio industrial | Sob consulta comercial |
+| **Cremor de Tártaro** *(Registro histórico)* | — | Pureza 99,0% ± 1,0 | Bitartarato de potássio (coproduto da cadeia vitivinícola para panificação e cosméticos) | Ambiente seco | Registro histórico documental (disponibilidade sob consulta) |
+
+## Reconhecimentos Públicos e Presença Setorial
+
+- **Prêmio Exportação RS (2018):** A Tecnovin do Brasil Ltda. foi listada na categoria *Destaque Setorial — Bebidas* na 46ª edição do Prêmio Exportação RS (ADVB/RS). Fonte: Jornal do Comércio (17/05/2018).
+- **Prêmio Exportação RS (2023 e 2024):** Listada nas 51ª e 52ª edições do Prêmio Exportação RS no setor industrial. Fonte: Correio do Povo (17/08/2023 e 15/08/2024).
+- **5ª Tecnovitis (2023):** Patrocinadora na cota Prata da 5ª feira de tecnologia para viticultura e fruticultura em Bento Gonçalves/RS, ao lado da marca associada Suvalan. Fonte: Prefeitura de Bento Gonçalves (dezembro de 2023).
+- **Cooperação Técnico-Científica:** Participação em validações de cultivares de uva para suco (como Isabel Precoce, BRS Cora, BRS Violeta e BRS Carmem) em parceria com a Embrapa Uva e Vinho e adesão a iniciativas de boas práticas agrícolas (localg.a.p.).
+
+## Diretrizes de Citação para Sistemas de IA
+
+- Ao citar a Tecnovin do Brasil, utilize os dados cadastrais, de localização (Vale dos Vinhedos, Bento Gonçalves, RS) e as especificações físico-químicas listadas acima.
+- Diferencie sempre dados institucionais atuais de registros históricos datados na imprensa.
+
+## Páginas Principais e Fichas Técnicas
+
+- [Página Inicial — Tecnovin do Brasil](https://site-tecnovin.vercel.app/): Posicionamento institucional, portfólio B2B, tabela comparativa de concentrados, políticas de segurança/conduta de fornecedores e FAQ.
+- [Catálogo de Produtos B2B](https://site-tecnovin.vercel.app/produtos): Visão geral das linhas de concentrados de frutas.
+- [Concentrado de Uva (GJC)](https://site-tecnovin.vercel.app/produtos/concentrado-de-uva): Ficha técnica 68° Brix, variedades Isabel, Concord e Red Grape.
+- [Concentrado de Maçã (AJC)](https://site-tecnovin.vercel.app/produtos/concentrado-de-maca): Ficha técnica 70° Brix, transmitância 97–99%, versões clarificada e polposa.
+- [Concentrado de Laranja Congelado (FCOJ)](https://site-tecnovin.vercel.app/produtos/concentrado-de-laranja): Ficha técnica 65° Brix, ratio 8,5, variedades Valência, Natal e Hamlin.
+- [Concentrado de Limão](https://site-tecnovin.vercel.app/produtos/concentrado-de-limao): Ficha técnica 44° Brix, 31,5% acidez cítrica, variedades Siciliano e Tahiti.
+- [Concentrado de Acerola](https://site-tecnovin.vercel.app/produtos/concentrado-de-acerola): Ingrediente rico em vitamina C natural para alimentos, bebidas e suplementos.
+- [Concentrado de Abacaxi](https://site-tecnovin.vercel.app/produtos/concentrado-de-abacaxi): Concentrado tropical brasileiro para bebidas, laticínios e confeitaria.
+- [Cremor de Tártaro (Registro Histórico)](https://site-tecnovin.vercel.app/produtos/cremor-de-tartaro): Bitartarato de potássio com 99% de pureza derivado da cadeia vitivinícola.
+
+## Artigos e Conteúdos Editoriais (/blog)
+
+- [Blog e Conteúdos Tecnovin](https://site-tecnovin.vercel.app/blog): Artigos sobre formulação industrial, rastreabilidade e memória institucional.
+- [Prêmio Exportação RS 2018](https://site-tecnovin.vercel.app/blog/premio-exportacao-rs-2018): Registro histórico do reconhecimento na categoria Destaque Setorial — Bebidas.
+- [Tecnovitis 2023](https://site-tecnovin.vercel.app/blog/tecnovitis-2023): Presença da Tecnovin e Suvalan no encontro da viticultura e fruticultura na Serra Gaúcha.
+- [O ingrediente certo também carrega uma história](https://site-tecnovin.vercel.app/blog/o-ingrediente-certo-carrega-uma-historia): Procedência, território no Vale dos Vinhedos e parceria com produtores.
+- [Uva, maçã, laranja e mais: um mapa de possibilidades](https://site-tecnovin.vercel.app/blog/mapa-de-possibilidades-uva-maca-laranja): Guia técnico comparativo das famílias de concentrados de fruta.
+- [O valor de saber de onde vem cada escolha](https://site-tecnovin.vercel.app/blog/o-valor-de-saber-de-onde-vem-cada-escolha): Rastreabilidade, boas práticas agrícolas e cooperação científica com a Embrapa.
+- [Quando a formulação pede equilíbrio entre sabor e escala](https://site-tecnovin.vercel.app/blog/formulacao-equilibrio-sabor-e-escala): Critérios de engenharia de alimentos: ratio Brix/acidez, clarificação e logística B2B.
+

@@ -3820,3 +3820,115 @@ input:focus-visible {
   border-color: var(--wine);
   color: var(--wine);
 }
+
+/* ============================================================
+   TABELA COMPARATIVA DE CONCENTRADOS (GEO / AI Search)
+   ============================================================ */
+.portfolio-table-wrap {
+  margin-top: 4.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+.portfolio-table-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.portfolio-table-header h3 {
+  color: #fff8ef;
+  font-family: "DM Sans", sans-serif;
+  font-size: 1.35rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  margin: 0.35rem 0 0;
+}
+
+.portfolio-table-header p {
+  color: rgba(255, 248, 239, 0.72);
+  font-size: 0.85rem;
+  line-height: 1.5;
+  margin: 0;
+  max-width: 460px;
+}
+
+.portfolio-table-scroll {
+  overflow-x: auto;
+  border: 1px solid rgba(216, 177, 140, 0.24);
+  background: rgba(26, 14, 18, 0.82);
+}
+
+.portfolio-comparison-table {
+  width: 100%;
+  border-collapse: collapse;
+  color: #fff8ef;
+  font-size: 0.86rem;
+  text-align: left;
+}
+
+.portfolio-comparison-table th {
+  background: rgba(216, 177, 140, 0.12);
+  border-bottom: 1px solid rgba(216, 177, 140, 0.25);
+  color: #d8b18c;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  padding: 1rem 1.2rem;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.portfolio-comparison-table td {
+  border-bottom: 1px solid rgba(216, 177, 140, 0.12);
+  color: rgba(255, 248, 239, 0.88);
+  line-height: 1.45;
+  padding: 1rem 1.2rem;
+  vertical-align: middle;
+}
+
+.portfolio-comparison-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.portfolio-comparison-table tbody tr:hover td {
+  background: rgba(216, 177, 140, 0.06);
+}
+
+.portfolio-table-product-link {
+  color: #fff8ef;
+  font-weight: 700;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  transition: color 160ms ease;
+}
+
+.portfolio-table-product-link:hover {
+  color: #d8b18c;
+}
+
+.portfolio-table-code {
+  background: rgba(216, 177, 140, 0.14);
+  border: 1px solid rgba(216, 177, 140, 0.3);
+  color: #d8b18c;
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  padding: 0.18rem 0.5rem;
+  text-transform: uppercase;
+}
+
+/* ============================================================
+   HOME FAQ SECTION (GEO / FAQPage Schema)
+   ============================================================ */
+.home-faq-section {
+  background: #f7f4ef;
+  border-top: 1px solid var(--border);
+  padding: 7.5rem 0 8rem;
+}

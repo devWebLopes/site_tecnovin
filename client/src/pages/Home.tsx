@@ -1,6 +1,7 @@
 import {
   ArrowDown,
   ArrowUpRight,
+  ChevronDown,
   Clock3,
   ExternalLink,
   Factory,
@@ -17,10 +18,47 @@ import {
   ShieldCheck,
   Sparkles,
 } from "lucide-react";
+import { useState } from "react";
 import { Link } from "wouter";
 import { toast } from "sonner";
+import SeoHead from "@/components/SeoHead";
 import SiteFooter from "@/components/SiteFooter";
 import SiteHeader from "@/components/SiteHeader";
+import { HOME_FAQ, HOME_SEO, getHomeSchemaGraph } from "@/lib/seo";
+
+function HomeFaqItem({
+  pergunta,
+  resposta,
+}: {
+  pergunta: string;
+  resposta: string;
+}) {
+  const [open, setOpen] = useState(false);
+  return (
+    <div className="faq-item">
+      <button
+        type="button"
+        className="faq-question"
+        aria-expanded={open}
+        onClick={() => setOpen(v => !v)}
+      >
+        <span>{pergunta}</span>
+        <ChevronDown
+          size={18}
+          strokeWidth={1.5}
+          aria-hidden="true"
+          className={`faq-chevron ${open ? "faq-chevron--open" : ""}`}
+        />
+      </button>
+      <div
+        className={`faq-answer ${open ? "faq-answer--open" : ""}`}
+        hidden={!open}
+      >
+        <p>{resposta}</p>
+      </div>
+    </div>
+  );
+}
 
 const products = [
   {
@@ -137,9 +175,18 @@ function scrollToContact() {
   document.getElementById("contato")?.scrollIntoView({ behavior: "smooth" });
 }
 
+const homeSchemas = getHomeSchemaGraph();
+
 export default function Home() {
   return (
     <div className="min-h-screen overflow-hidden bg-[#f7f4ef] text-[#251e1c]">
+      <SeoHead
+        title={HOME_SEO.title}
+        description={HOME_SEO.description}
+        path="/"
+        keywords={HOME_SEO.keywords}
+        schema={homeSchemas}
+      />
       <SiteHeader />
 
       <main>
@@ -499,6 +546,152 @@ export default function Home() {
                 </article>
               ))}
             </div>
+
+            {/* RF-08 — Tabela comparativa técnica de concentrados (GEO / AI Search) */}
+            <div className="portfolio-table-wrap">
+              <div className="portfolio-table-header">
+                <div>
+                  <span className="kicker kicker--light">
+                    Comparativo técnico B2B
+                  </span>
+                  <h3 id="tabela-comparativa-title">
+                    Especificações de referência por família de concentrado
+                  </h3>
+                </div>
+                <p>
+                  Parâmetros físico-químicos e condições logísticas de
+                  referência para formulação industrial.
+                </p>
+              </div>
+              <div className="portfolio-table-scroll">
+                <table
+                  className="portfolio-comparison-table"
+                  aria-labelledby="tabela-comparativa-title"
+                >
+                  <thead>
+                    <tr>
+                      <th scope="col">Ingrediente</th>
+                      <th scope="col">Sigla</th>
+                      <th scope="col">Graus Brix</th>
+                      <th scope="col">Acidez / Parâmetro Chave</th>
+                      <th scope="col">Armazenamento</th>
+                      <th scope="col">Embalagem Padrão</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>
+                        <Link
+                          href="/produtos/concentrado-de-uva"
+                          className="portfolio-table-product-link"
+                        >
+                          Concentrado de Uva <ArrowUpRight size={14} />
+                        </Link>
+                      </td>
+                      <td>
+                        <span className="portfolio-table-code">GJC</span>
+                      </td>
+                      <td>68,0 ± 0,5° Brix</td>
+                      <td>
+                        3,5 ± 1% (ácido tartárico) · Clarificado e polposo
+                      </td>
+                      <td>Até 5 °C (validade até 24 meses)</td>
+                      <td>Tambor de aço 265 kg (epóxi + duplo PE)</td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <Link
+                          href="/produtos/concentrado-de-maca"
+                          className="portfolio-table-product-link"
+                        >
+                          Concentrado de Maçã <ArrowUpRight size={14} />
+                        </Link>
+                      </td>
+                      <td>
+                        <span className="portfolio-table-code">AJC</span>
+                      </td>
+                      <td>70,0 ± 0,5° Brix</td>
+                      <td>Transmitância 97–99% · 1,70 ± 0,5% (ácido málico)</td>
+                      <td>Até 5 °C (clarif.) / -20 °C (polposo)</td>
+                      <td>Tambor de aço 265 kg (epóxi + duplo PE)</td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <Link
+                          href="/produtos/concentrado-de-laranja"
+                          className="portfolio-table-product-link"
+                        >
+                          Concentrado de Laranja Congelado{" "}
+                          <ArrowUpRight size={14} />
+                        </Link>
+                      </td>
+                      <td>
+                        <span className="portfolio-table-code">FCOJ</span>
+                      </td>
+                      <td>65,0 ± 0,5° Brix</td>
+                      <td>Ratio 8,5 ± 1,5 · 7 ± 2% (ácido cítrico)</td>
+                      <td>Abaixo de -18 °C (validade até 24 meses)</td>
+                      <td>Tambor de aço 260 kg (lotes até 18 t)</td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <Link
+                          href="/produtos/concentrado-de-limao"
+                          className="portfolio-table-product-link"
+                        >
+                          Concentrado de Limão <ArrowUpRight size={14} />
+                        </Link>
+                      </td>
+                      <td>
+                        <span className="portfolio-table-code">LEMON JC</span>
+                      </td>
+                      <td>44,0 ± 3,0° Brix</td>
+                      <td>
+                        31,5 ± 2,5% (ácido cítrico) · Vit. C 142,5 mg/100ml
+                      </td>
+                      <td>-20 °C (validade até 18 meses)</td>
+                      <td>Tambor de aço 230 kg (lotes até 16 t)</td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <Link
+                          href="/produtos/concentrado-de-acerola"
+                          className="portfolio-table-product-link"
+                        >
+                          Concentrado de Acerola <ArrowUpRight size={14} />
+                        </Link>
+                      </td>
+                      <td>
+                        <span className="portfolio-table-code">ACEROLA JC</span>
+                      </td>
+                      <td>Sob consulta</td>
+                      <td>Alto teor natural de ácido ascórbico (Vitamina C)</td>
+                      <td>Cadeia de frio controlada</td>
+                      <td>Fornecimento industrial B2B</td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <Link
+                          href="/produtos/concentrado-de-abacaxi"
+                          className="portfolio-table-product-link"
+                        >
+                          Concentrado de Abacaxi <ArrowUpRight size={14} />
+                        </Link>
+                      </td>
+                      <td>
+                        <span className="portfolio-table-code">
+                          PINEAPPLE JC
+                        </span>
+                      </td>
+                      <td>Sob consulta</td>
+                      <td>Equilíbrio sensorial tropical de doçura e acidez</td>
+                      <td>Cadeia de frio controlada</td>
+                      <td>Fornecimento industrial B2B</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
           </div>
         </section>
 
@@ -617,12 +810,8 @@ export default function Home() {
                   <ShieldCheck size={16} /> Compromisso com pessoas, patrimônio
                   e produto
                 </span>
-                <a
-                  href="/manus-storage/PoliticadeSeguranca_d15f670c.pdf"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  Ver documento original <ExternalLink size={14} />
+                <a href="mailto:tecnovin@tecnovin.com.br?subject=Solicita%C3%A7%C3%A3o%20de%20Documento%20-%20Pol%C3%ADtica%20de%20Seguran%C3%A7a">
+                  Solicitar via oficial <Mail size={14} />
                 </a>
               </div>
             </div>
@@ -758,12 +947,8 @@ export default function Home() {
                   <Leaf size={16} /> Ética, transparência e respeito em toda a
                   cadeia
                 </span>
-                <a
-                  href="/manus-storage/PrincipiosdeCondutaparaFornecedor_84142fb6.pdf"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  Ver documento original <ExternalLink size={14} />
+                <a href="mailto:ouvidoria@tecnovin.com.br?subject=C%C3%B3digo%20de%20Conduta%20para%20Fornecedor">
+                  Canal de conformidade <Mail size={14} />
                 </a>
               </div>
             </div>
@@ -1014,6 +1199,39 @@ export default function Home() {
                     </Link>
                   </div>
                 </article>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* RF-08 — Seção de Perguntas Frequentes (FAQ) na Home com Schema FAQPage */}
+        <section
+          className="home-faq-section"
+          id="faq"
+          aria-labelledby="home-faq-title"
+        >
+          <div className="container produto-faq-inner">
+            <div className="produto-faq-header">
+              <p className="kicker">Perguntas frequentes B2B</p>
+              <h2
+                id="home-faq-title"
+                className="display-heading display-heading--small"
+              >
+                Dúvidas sobre <em>fornecimento</em> e portfólio.
+              </h2>
+            </div>
+            <div
+              className="faq-list"
+              role="list"
+              aria-label="Perguntas frequentes sobre a Tecnovin do Brasil"
+            >
+              {HOME_FAQ.map(item => (
+                <div key={item.pergunta} role="listitem">
+                  <HomeFaqItem
+                    pergunta={item.pergunta}
+                    resposta={item.resposta}
+                  />
+                </div>
               ))}
             </div>
           </div>

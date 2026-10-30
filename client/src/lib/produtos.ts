@@ -167,9 +167,9 @@ const concentradoDeUva: Produto = {
     },
   },
   seo: {
-    title: "Concentrado de Uva (GJC) — Tecnovin do Brasil | Ingredientes B2B",
+    title: "Concentrado de Uva (GJC) 68° Brix — Tecnovin do Brasil",
     description:
-      "Concentrado de Uva Isabel, Concord e Red Grape. Especificações técnicas, embalagem industrial e solicitação de amostras. Fornecedor B2B no Vale dos Vinhedos, RS.",
+      "Concentrado de Uva Isabel, Concord e Red Grape (68° Brix) para a indústria de alimentos e bebidas. Fornecedor B2B no Vale dos Vinhedos, Bento Gonçalves, RS.",
     keywords: [
       "concentrado de uva",
       "grape juice concentrate",
@@ -256,9 +256,9 @@ const concentradoDeMaca: Produto = {
     },
   },
   seo: {
-    title: "Concentrado de Maçã (AJC) — Tecnovin do Brasil | 70° Brix",
+    title: "Concentrado de Maçã (AJC) 70° Brix — Tecnovin do Brasil",
     description:
-      "Apple Juice Concentrate 70° Brix, clarificado e polposo. Transmitância 97–99%. Fornecedor B2B no Vale dos Vinhedos, RS. Solicite amostra.",
+      "Apple Juice Concentrate (AJC) 70° Brix clarificado e polposo com transmitância de 97–99%. Ingrediente B2B produzido no Vale dos Vinhedos, Bento Gonçalves, RS.",
     keywords: [
       "concentrado de maçã",
       "apple juice concentrate",
@@ -347,9 +347,9 @@ const concentradoDeLaranja: Produto = {
     },
   },
   seo: {
-    title: "FCOJ — Concentrado de Laranja Congelado | Tecnovin do Brasil",
+    title: "Concentrado de Laranja Congelado FCOJ — Tecnovin RS",
     description:
-      "Frozen Concentrate Orange Juice (FCOJ) 65° Brix. Variedades Valência, Natal e Hamlin. Ratio 8,5. Fornecedor B2B. Bento Gonçalves, RS.",
+      "Frozen Concentrate Orange Juice (FCOJ) 65° Brix a partir das variedades Valência, Natal e Hamlin. Ratio 8,5 para a indústria de bebidas. Bento Gonçalves, RS.",
     keywords: [
       "concentrado de laranja congelado",
       "frozen concentrate orange juice",
@@ -438,9 +438,9 @@ const concentradoDeLimao: Produto = {
     },
   },
   seo: {
-    title: "Concentrado de Limão — Tecnovin do Brasil | Siciliano & Tahiti",
+    title: "Concentrado de Limão Siciliano e Tahiti — Tecnovin RS",
     description:
-      "Lemon Juice Concentrate 44° Brix. Variedades Siciliano e Tahiti. 31,5% acidez cítrica. Vitamina C 142,5 mg/100ml. Fornecedor B2B no RS.",
+      "Lemon Juice Concentrate 44° Brix nas variedades Siciliano e Tahiti com 31,5% de acidez cítrica e alto teor de vitamina C. Fornecedor B2B em Bento Gonçalves, RS.",
     keywords: [
       "concentrado de limão",
       "lemon juice concentrate",
@@ -507,9 +507,9 @@ const concentradoDeAcerola: Produto = {
     },
   },
   seo: {
-    title: "Concentrado de Acerola — Tecnovin do Brasil | Ingrediente B2B",
+    title: "Concentrado de Acerola Industrial B2B — Tecnovin do Brasil",
     description:
-      "Acerola Juice Concentrate produzido pela Tecnovin no Vale dos Vinhedos, RS. Ingrediente rico em vitamina C para alimentos, bebidas e cosméticos.",
+      "Acerola Juice Concentrate produzido pela Tecnovin no Vale dos Vinhedos, RS. Ingrediente rico em vitamina C natural para alimentos, bebidas e suplementos B2B.",
     keywords: [
       "concentrado de acerola",
       "acerola juice concentrate",
@@ -575,9 +575,9 @@ const concentradoDeAbacaxi: Produto = {
     },
   },
   seo: {
-    title: "Concentrado de Abacaxi — Tecnovin do Brasil | Ingrediente B2B",
+    title: "Concentrado de Abacaxi Industrial B2B — Tecnovin do Brasil",
     description:
-      "Pineapple Juice Concentrate produzido pela Tecnovin. Sabor tropical brasileiro para formulações industriais. Fornecedor B2B no Vale dos Vinhedos, RS.",
+      "Pineapple Juice Concentrate produzido pela Tecnovin no Vale dos Vinhedos, RS. Sabor tropical brasileiro equilibrado para bebidas e formulações industriais B2B.",
     keywords: [
       "concentrado de abacaxi",
       "pineapple juice concentrate",
@@ -650,9 +650,9 @@ const cremorDeTartaro: Produto = {
     },
   },
   seo: {
-    title: "Cremor de Tártaro — Tecnovin do Brasil | Coproduto da Uva",
+    title: "Cremor de Tártaro (Bitartarato) — Tecnovin do Brasil",
     description:
-      "Cream of Tartar (bitartarato de potássio) com pureza 99%. Coproduto da cadeia de uva do Vale dos Vinhedos. Panificação, fermentos e cosméticos.",
+      "Cremor de Tártaro (bitartarato de potássio) com pureza de 99% derivado da cadeia vitivinícola no Vale dos Vinhedos, RS. Registro histórico técnico da Tecnovin.",
     keywords: [
       "cremor de tártaro",
       "cream of tartar Brazil",

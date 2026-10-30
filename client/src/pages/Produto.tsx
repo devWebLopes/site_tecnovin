@@ -10,8 +10,9 @@ import ProductHero from "@/components/ProductHero";
 import FichaTecnica from "@/components/FichaTecnica";
 import ProductNav from "@/components/ProductNav";
 import ProductContactForm from "@/components/ProductContactForm";
-import JsonLd from "@/components/JsonLd";
+import SeoHead from "@/components/SeoHead";
 import { PRODUTOS_MAP, getProdutoNavigation } from "@/lib/produtos";
+import { SITE_URL } from "@/lib/seo";
 import { ChevronDown, Factory, Leaf, Sparkles } from "lucide-react";
 import { useState } from "react";
 
@@ -93,15 +94,16 @@ export default function Produto() {
     "@type": "Product",
     name: produto.nomeComercial,
     description: produto.descricao,
-    image: `https://tecnovin.com.br${produto.imagem}`,
+    image: `${SITE_URL}${produto.imagem}`,
     brand: {
       "@type": "Brand",
       name: "Tecnovin do Brasil",
     },
     manufacturer: {
       "@type": "Organization",
+      "@id": `${SITE_URL}/#organization`,
       name: "Tecnovin do Brasil Ltda.",
-      url: "https://tecnovin.com.br",
+      url: `${SITE_URL}/`,
       address: {
         "@type": "PostalAddress",
         addressLocality: "Bento Gonçalves",
@@ -128,19 +130,19 @@ export default function Produto() {
         "@type": "ListItem",
         position: 1,
         name: "Home",
-        item: "https://tecnovin.com.br/",
+        item: `${SITE_URL}/`,
       },
       {
         "@type": "ListItem",
         position: 2,
         name: "Produtos",
-        item: "https://tecnovin.com.br/produtos",
+        item: `${SITE_URL}/produtos`,
       },
       {
         "@type": "ListItem",
         position: 3,
         name: produto.nomeComercial,
-        item: `https://tecnovin.com.br/produtos/${produto.slug}`,
+        item: `${SITE_URL}/produtos/${produto.slug}`,
       },
     ],
   };
@@ -166,26 +168,16 @@ export default function Produto() {
 
   return (
     <>
-      {/* SEO meta tags */}
-      <title>{produto.seo.title}</title>
-      <meta name="description" content={produto.seo.description} />
-      <meta name="keywords" content={produto.seo.keywords.join(", ")} />
-      <link
-        rel="canonical"
-        href={`https://tecnovin.com.br/produtos/${produto.slug}`}
+      <SeoHead
+        title={produto.seo.title}
+        description={produto.seo.description}
+        path={`/produtos/${produto.slug}`}
+        type="product"
+        image={produto.imagem}
+        imageAlt={produto.imagemAlt}
+        keywords={produto.seo.keywords}
+        schema={schemas}
       />
-      <meta property="og:title" content={produto.seo.title} />
-      <meta property="og:description" content={produto.seo.description} />
-      <meta
-        property="og:image"
-        content={`https://tecnovin.com.br${produto.imagem}`}
-      />
-      <meta property="og:type" content="product" />
-      <meta
-        property="og:url"
-        content={`https://tecnovin.com.br/produtos/${produto.slug}`}
-      />
-      <JsonLd data={schemas} />
 
       <SiteHeader />
 
