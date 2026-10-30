@@ -11,6 +11,8 @@ export interface RevealProps {
   duration?: number;
   yOffset?: number;
   xOffset?: number;
+  /** Blur inicial em px — cria entrada cinematográfica "foco entrando" */
+  blur?: number;
   className?: string;
   amount?: number;
 }
@@ -21,10 +23,14 @@ export function Reveal({
   duration = 0.85,
   yOffset = 24,
   xOffset = 0,
+  blur = 0,
   className,
   amount = 0.2,
 }: RevealProps) {
   const shouldReduceMotion = useReducedMotion();
+
+  const initialFilter =
+    !shouldReduceMotion && blur > 0 ? `blur(${blur}px)` : "blur(0px)";
 
   return (
     <motion.div
@@ -32,11 +38,13 @@ export function Reveal({
         opacity: 0,
         y: shouldReduceMotion ? 0 : yOffset,
         x: shouldReduceMotion ? 0 : xOffset,
+        filter: initialFilter,
       }}
       whileInView={{
         opacity: 1,
         y: 0,
         x: 0,
+        filter: "blur(0px)",
       }}
       viewport={{ once: true, amount, margin: "0px 0px -50px 0px" }}
       transition={{

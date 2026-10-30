@@ -218,11 +218,30 @@ input:focus-visible {
   letter-spacing: 0.1em;
   padding: 1.05rem 1.25rem;
   text-transform: uppercase;
+  position: relative;
+  overflow: hidden;
   transition:
-    transform 160ms var(--ease-out),
-    background 180ms ease,
+    transform 200ms cubic-bezier(0.22, 1, 0.36, 1),
+    background 220ms ease,
     color 180ms ease,
-    border-color 180ms ease;
+    border-color 180ms ease,
+    box-shadow 240ms ease;
+}
+.button::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    105deg,
+    transparent 30%,
+    rgba(255, 255, 255, 0.14) 50%,
+    transparent 70%
+  );
+  transform: translateX(-100%);
+  transition: transform 500ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+.button:hover::after {
+  transform: translateX(100%);
 }
 .button:active {
   transform: scale(0.97);
@@ -235,6 +254,7 @@ input:focus-visible {
   background: #d8b18c;
   color: var(--wine-deep);
   transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(197, 160, 89, 0.28);
 }
 .button--primary {
   background: var(--wine);
@@ -244,6 +264,7 @@ input:focus-visible {
   background: var(--wine-deep);
   color: #fff8ef;
   transform: translateY(-2px);
+  box-shadow: 0 8px 28px rgba(92, 26, 43, 0.38);
 }
 .button[disabled],
 .button[aria-disabled="true"] {
@@ -270,11 +291,16 @@ input:focus-visible {
   z-index: 20;
 }
 .site-header--solid {
-  background: rgba(250, 248, 245, 0.94);
-  box-shadow: 0 1px 0 rgba(28, 25, 23, 0.08);
+  background: rgba(250, 248, 245, 0.88);
+  box-shadow:
+    0 1px 0 rgba(28, 25, 23, 0.07),
+    0 4px 24px rgba(92, 26, 43, 0.04),
+    0 0 0 1px rgba(197, 160, 89, 0.06);
   color: var(--ink);
   position: fixed;
-  backdrop-filter: blur(18px);
+  backdrop-filter: blur(24px) saturate(1.6);
+  -webkit-backdrop-filter: blur(24px) saturate(1.6);
+  border-bottom: 1px solid rgba(197, 160, 89, 0.08);
 }
 .site-header--hero {
   background: linear-gradient(180deg, rgba(18, 17, 16, 0.42), transparent);
@@ -326,7 +352,7 @@ input:focus-visible {
   transition: opacity 220ms ease;
 }
 .nav-link::after {
-  background: var(--gold);
+  background: linear-gradient(90deg, var(--gold), rgba(197, 160, 89, 0.4));
   bottom: -0.45rem;
   content: "";
   height: 1px;
@@ -334,7 +360,7 @@ input:focus-visible {
   position: absolute;
   transform: scaleX(0);
   transform-origin: left;
-  transition: transform 360ms var(--ease-out);
+  transition: transform 420ms cubic-bezier(0.22, 1, 0.36, 1);
   width: 100%;
 }
 .nav-link:hover {
@@ -353,14 +379,36 @@ input:focus-visible {
   letter-spacing: 0.1em;
   padding: 0.75rem 0.95rem;
   text-transform: uppercase;
+  position: relative;
+  overflow: hidden;
   transition:
     background 180ms ease,
-    color 180ms ease;
+    color 180ms ease,
+    box-shadow 240ms ease,
+    transform 200ms ease;
+}
+.header-cta::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    105deg,
+    transparent 30%,
+    rgba(197, 160, 89, 0.18) 50%,
+    transparent 70%
+  );
+  transform: translateX(-100%);
+  transition: transform 480ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+.header-cta:hover::before {
+  transform: translateX(100%);
 }
 .header-cta:hover {
   background: var(--wine);
   border-color: var(--wine);
   color: #fff8ef;
+  box-shadow: 0 4px 16px rgba(92, 26, 43, 0.32);
+  transform: translateY(-1px);
 }
 .mobile-menu-button {
   background: transparent;
@@ -534,12 +582,14 @@ input:focus-visible {
   height: 100%;
   padding: 1.3rem 1.4rem;
   transition:
-    background 180ms ease,
-    color 180ms ease;
+    background 220ms ease,
+    color 220ms ease,
+    box-shadow 280ms ease;
 }
 .quick-nav__item:hover {
   background: var(--cream);
   color: var(--wine);
+  box-shadow: inset 0 -3px 0 rgba(197, 160, 89, 0.5);
 }
 .quick-nav__item:active {
   background: #efe9e0;
@@ -859,16 +909,19 @@ input:focus-visible {
   padding: 0;
   position: relative;
   transition:
-    background 220ms ease,
-    border-color 220ms ease,
-    box-shadow 220ms ease,
-    transform 220ms var(--ease-out);
+    background 260ms ease,
+    border-color 280ms ease,
+    box-shadow 320ms ease,
+    transform 280ms cubic-bezier(0.22, 1, 0.36, 1);
 }
 .product-grid .product-card:hover {
   background: #331d24;
-  border-color: rgba(216, 177, 140, 0.36);
-  box-shadow: 0 16px 40px rgba(12, 6, 8, 0.42);
-  transform: translateY(-5px);
+  border-color: rgba(var(--accent-rgb, 216, 177, 140), 0.5);
+  box-shadow:
+    0 20px 50px rgba(12, 6, 8, 0.5),
+    0 0 0 1px rgba(216, 177, 140, 0.12),
+    0 -1px 0 rgba(216, 177, 140, 0.08) inset;
+  transform: translateY(-6px);
 }
 .product-grid .product-card::before {
   background: var(--accent, #d8b18c);
@@ -917,11 +970,11 @@ input:focus-visible {
   display: block;
   height: 100%;
   object-fit: cover;
-  transition: transform 700ms var(--ease-out);
+  transition: transform 800ms cubic-bezier(0.22, 1, 0.36, 1);
   width: 100%;
 }
 .product-grid .product-card:hover .product-card-media__img {
-  transform: scale(1.03);
+  transform: scale(1.05);
 }
 .product-card-media__overlay {
   background: linear-gradient(
@@ -1475,12 +1528,14 @@ input:focus-visible {
   padding: 2rem 1.8rem;
   position: relative;
   transition:
-    background 320ms ease,
-    transform 420ms var(--ease-out);
+    background 360ms ease,
+    transform 460ms cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 360ms ease;
 }
 .recognition-card:hover {
   background: #ebe5dc;
-  transform: translateY(-4px);
+  transform: translateY(-5px);
+  box-shadow: 0 16px 40px rgba(28, 25, 23, 0.1), 0 0 0 1px rgba(197, 160, 89, 0.2);
 }
 .recognition-card--award {
   background: var(--wine);
@@ -1592,14 +1647,16 @@ input:focus-visible {
   display: flex;
   flex-direction: column;
   transition:
-    transform 420ms var(--ease-out),
+    transform 460ms cubic-bezier(0.22, 1, 0.36, 1),
     border-color 320ms ease,
-    box-shadow 320ms ease;
+    box-shadow 360ms ease;
 }
 .editorial-card:hover {
-  border-color: rgba(197, 160, 89, 0.45);
-  box-shadow: 0 12px 32px rgba(28, 25, 23, 0.06);
-  transform: translateY(-4px);
+  border-color: rgba(197, 160, 89, 0.5);
+  box-shadow:
+    0 18px 40px rgba(28, 25, 23, 0.08),
+    0 0 0 1px rgba(197, 160, 89, 0.12);
+  transform: translateY(-5px);
 }
 .editorial-card-art {
   align-items: center;
@@ -2713,13 +2770,15 @@ input:focus-visible {
   text-decoration: none;
   color: var(--ink);
   transition:
-    transform 200ms var(--ease-out),
-    box-shadow 200ms ease;
+    transform 320ms cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 280ms ease,
+    box-shadow 320ms ease;
   height: 100%;
 }
 .product-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 40px rgba(37, 30, 28, 0.12);
+  transform: translateY(-6px);
+  border-color: rgba(197, 160, 89, 0.45);
+  box-shadow: 0 16px 44px rgba(37, 30, 28, 0.1), 0 0 0 1px rgba(197, 160, 89, 0.12);
 }
 .product-card__image-wrap {
   position: relative;
@@ -2730,10 +2789,10 @@ input:focus-visible {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 700ms var(--ease-out);
+  transition: transform 750ms cubic-bezier(0.22, 1, 0.36, 1);
 }
 .product-card:hover .product-card__image {
-  transform: scale(1.03);
+  transform: scale(1.05);
 }
 .product-card__image-overlay {
   position: absolute;
@@ -2748,21 +2807,25 @@ input:focus-visible {
   position: absolute;
   top: 0.9rem;
   left: 0.9rem;
-  background: rgba(116, 47, 62, 0.9);
+  background: rgba(116, 47, 62, 0.88);
+  border: 1px solid rgba(255, 255, 255, 0.15);
   color: #fff8ef;
   font-size: 0.72rem;
   font-weight: 700;
   letter-spacing: 0.12em;
   padding: 0.3rem 0.65rem;
   text-transform: uppercase;
-  backdrop-filter: blur(8px);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
 }
 .product-card__historico-badge {
   position: absolute;
   top: 0.9rem;
   right: 0.9rem;
   align-items: center;
-  background: rgba(186, 128, 95, 0.9);
+  background: rgba(186, 128, 95, 0.88);
+  border: 1px solid rgba(255, 255, 255, 0.15);
   color: #fff8ef;
   display: flex;
   font-size: 0.72rem;
@@ -2771,7 +2834,9 @@ input:focus-visible {
   letter-spacing: 0.1em;
   padding: 0.3rem 0.65rem;
   text-transform: uppercase;
-  backdrop-filter: blur(8px);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
 }
 .product-card__body {
   padding: 1.5rem;
@@ -3299,6 +3364,7 @@ input:focus-visible {
 }
 .faq-item {
   border-bottom: 1px solid var(--border);
+  transition: border-color 220ms ease;
 }
 .faq-item:first-child {
   border-top: 1px solid var(--border);
@@ -3318,15 +3384,21 @@ input:focus-visible {
   padding: 1.3rem 0;
   text-align: left;
   width: 100%;
-  transition: color 180ms ease;
+  transition:
+    color 200ms ease,
+    padding-left 250ms cubic-bezier(0.22, 1, 0.36, 1);
 }
 .faq-question:hover {
+  color: var(--wine);
+  padding-left: 0.35rem;
+}
+.faq-question[aria-expanded="true"] {
   color: var(--wine);
 }
 .faq-chevron {
   color: var(--wine);
   flex-shrink: 0;
-  transition: transform 220ms var(--ease-out);
+  transition: transform 280ms cubic-bezier(0.22, 1, 0.36, 1);
 }
 .faq-chevron--open {
   transform: rotate(180deg);
@@ -3337,10 +3409,10 @@ input:focus-visible {
   line-height: 1.75;
   max-height: 0;
   overflow: hidden;
-  transition: max-height 300ms var(--ease-out);
+  transition: max-height 420ms cubic-bezier(0.22, 1, 0.36, 1);
 }
 .faq-answer--open {
-  max-height: 300px;
+  max-height: 400px;
 }
 .faq-answer[hidden] {
   display: block;
@@ -4144,3 +4216,291 @@ input:focus-visible {
   border-top: 1px solid var(--border);
   padding: 8rem 0 8.5rem;
 }
+
+/* ============================================================
+   ENHANCED UX LAYER — Efeitos adicionais mantendo identidade Tecnovin
+   Adicionado: glassmorphism adaptado, hovers refinados, micro-interações,
+   scroll suave aprimorado, glow animations e transições de classe premium.
+   ============================================================ */
+
+/* ── Scrollbar Tecnovin ─────────────────────────────────────── */
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-track {
+  background: var(--cream);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(92, 26, 43, 0.28);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(92, 26, 43, 0.5);
+}
+
+/* ── Selection Tecnovin ──────────────────────────────────────── */
+::selection {
+  background: rgba(92, 26, 43, 0.18);
+  color: var(--wine-deep);
+}
+
+/* ── Keyframes: shimmer dourado ─────────────────────────────── */
+@keyframes goldShimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+/* ── Keyframes: glow pulse bordô ───────────────────────────── */
+@keyframes wineGlow {
+  0%, 100% {
+    box-shadow: 0 0 24px rgba(92, 26, 43, 0.18);
+  }
+  50% {
+    box-shadow: 0 0 44px rgba(92, 26, 43, 0.28);
+  }
+}
+
+/* ── Hero section: gradient overlay mais rico ───────────────── */
+.hero-section {
+  background: #342127;
+}
+.hero-overlay {
+  background:
+    linear-gradient(
+      90deg,
+      rgba(28, 12, 16, 0.94) 0%,
+      rgba(42, 19, 24, 0.72) 44%,
+      rgba(35, 15, 20, 0.12) 84%
+    ),
+    linear-gradient(180deg, rgba(23, 13, 16, 0.55) 0%, transparent 30%),
+    linear-gradient(0deg, rgba(23, 12, 15, 0.6) 0%, transparent 48%);
+  inset: 0;
+  position: absolute;
+}
+
+/* ── Image Story: hover suavizado ───────────────────────────── */
+.image-story-media img {
+  transition: transform 800ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+.image-story-media:hover img {
+  transform: scale(1.04);
+}
+
+/* ── Stat values: micro-animação ao surgir ──────────────────── */
+.stat-value {
+  transition: color 300ms ease;
+}
+
+/* ── Pillar cards: hover elegante ────────────────────────────── */
+.pillar {
+  padding: 1.2rem 1.2rem 1.2rem 0;
+  border-bottom: 1px solid var(--border);
+  transition:
+    background 280ms ease,
+    padding-left 300ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+.pillar:hover {
+  background: rgba(197, 160, 89, 0.04);
+  padding-left: 0.5rem;
+}
+.pillar-icon {
+  transition: background 280ms ease, color 280ms ease;
+}
+.pillar:hover .pillar-icon {
+  background: rgba(92, 26, 43, 0.12);
+}
+
+/* ── Contact section: glow bordô animado ────────────────────── */
+.contact-section {
+  background: var(--wine);
+  color: #fff8ef;
+  overflow: hidden;
+  padding: 8.5rem 0 8rem;
+  position: relative;
+}
+.contact-glow {
+  border: 1px solid rgba(216, 177, 140, 0.2);
+  border-radius: 50%;
+  height: 700px;
+  position: absolute;
+  right: -220px;
+  top: -210px;
+  width: 700px;
+  animation: wineGlow 6s ease-in-out infinite;
+}
+.contact-glow::before {
+  content: "";
+  position: absolute;
+  inset: 60px;
+  border: 1px solid rgba(216, 177, 140, 0.1);
+  border-radius: 50%;
+}
+
+/* ── Portfolio comparison table: row hover ───────────────────── */
+.portfolio-comparison-table tbody tr {
+  transition: background 200ms ease;
+}
+.portfolio-comparison-table tbody tr:hover {
+  background: rgba(197, 160, 89, 0.04);
+}
+
+/* ── Product card glow per accent ───────────────────────────── */
+.product-card--wine:hover {
+  box-shadow:
+    0 20px 50px rgba(12, 6, 8, 0.5),
+    0 0 0 1px rgba(229, 152, 160, 0.2),
+    0 4px 24px rgba(229, 152, 160, 0.08);
+}
+.product-card--olive:hover {
+  box-shadow:
+    0 20px 50px rgba(12, 6, 8, 0.5),
+    0 0 0 1px rgba(194, 202, 150, 0.2);
+}
+.product-card--amber:hover {
+  box-shadow:
+    0 20px 50px rgba(12, 6, 8, 0.5),
+    0 0 0 1px rgba(240, 188, 109, 0.22);
+}
+.product-card--lime:hover {
+  box-shadow:
+    0 20px 50px rgba(12, 6, 8, 0.5),
+    0 0 0 1px rgba(205, 224, 112, 0.2);
+}
+.product-card--coral:hover {
+  box-shadow:
+    0 20px 50px rgba(12, 6, 8, 0.5),
+    0 0 0 1px rgba(240, 149, 128, 0.2);
+}
+.product-card--gold:hover {
+  box-shadow:
+    0 20px 50px rgba(12, 6, 8, 0.5),
+    0 0 0 1px rgba(236, 196, 126, 0.22);
+}
+
+/* ── Product card code badge: glassmorphism real ─────────────── */
+.product-card-media__code {
+  backdrop-filter: blur(10px) saturate(1.4);
+  -webkit-backdrop-filter: blur(10px) saturate(1.4);
+  background: rgba(33, 18, 23, 0.7);
+  border: 1px solid rgba(216, 177, 140, 0.35);
+  color: var(--accent, #d8b18c);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  padding: 0.25rem 0.6rem;
+  position: absolute;
+  right: 1rem;
+  text-transform: uppercase;
+  top: 0.85rem;
+  z-index: 2;
+  transition: background 220ms ease, border-color 220ms ease;
+}
+.product-card:hover .product-card-media__code {
+  background: rgba(33, 18, 23, 0.85);
+  border-color: rgba(216, 177, 140, 0.55);
+}
+
+/* ── Recognition card award: hover mais rico ─────────────────── */
+.recognition-card--award:hover {
+  background: #4a1525;
+  box-shadow: 0 16px 40px rgba(58, 16, 29, 0.45), 0 0 0 1px rgba(197, 160, 89, 0.15);
+}
+.recognition-card--archive:hover {
+  background: #24211f;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35), 0 0 0 1px rgba(234, 230, 223, 0.08);
+}
+
+/* ── Text link: gap transition mais suave ────────────────────── */
+.text-link {
+  transition:
+    gap 200ms cubic-bezier(0.22, 1, 0.36, 1),
+    color 180ms ease,
+    opacity 180ms ease;
+}
+.text-link:hover {
+  gap: 1rem;
+}
+
+/* ── Site header hero: gradiente mais rico ───────────────────── */
+.site-header--hero {
+  background: linear-gradient(
+    180deg,
+    rgba(18, 17, 16, 0.52) 0%,
+    rgba(18, 17, 16, 0.15) 60%,
+    transparent 100%
+  );
+}
+
+/* ── Positioning messages: hover sutil ──────────────────────── */
+.positioning-message {
+  transition: background 240ms ease, padding-left 300ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+.positioning-message:hover {
+  background: rgba(197, 160, 89, 0.04);
+}
+
+/* ── Territory art: pulse animation ─────────────────────────── */
+.territory-point span {
+  animation: wineGlow 3.5s ease-in-out infinite;
+}
+
+/* ── Footer site: hover links ────────────────────────────────── */
+.site-footer a {
+  transition: color 180ms ease, opacity 180ms ease;
+}
+.site-footer a:hover {
+  opacity: 0.75;
+}
+
+/* ── Safety policy card: sutil hover ────────────────────────── */
+.safety-policy-card {
+  transition: box-shadow 360ms ease;
+}
+.safety-policy-card:hover {
+  box-shadow: 0 8px 32px rgba(92, 26, 43, 0.1);
+}
+
+/* ── Supplier code card: sutil hover ────────────────────────── */
+.supplier-code-card {
+  transition: box-shadow 360ms ease;
+}
+.supplier-code-card:hover {
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+/* ── Reveal: suporte a blur inicial no motion.div ───────────── */
+/* (controlado via Framer Motion filter prop no Reveal.tsx) */
+
+/* ── Gradientes de Texto Nobres Tecnovin ─────────────────────── */
+.text-gradient-gold {
+  background: linear-gradient(135deg, #faf8f5 0%, #e6c88b 45%, #c5a059 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.text-gradient-wine {
+  background: linear-gradient(135deg, #8a2a41 0%, #5c1a2b 55%, #3a101d 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ── Glassmorphism Panels Tecnovin ───────────────────────────── */
+.glass-panel-dark {
+  background: rgba(43, 24, 30, 0.45);
+  backdrop-filter: blur(16px) saturate(1.4);
+  -webkit-backdrop-filter: blur(16px) saturate(1.4);
+  border: 1px solid rgba(216, 177, 140, 0.18);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
+}
+
+.glass-panel-light {
+  background: rgba(255, 253, 250, 0.75);
+  backdrop-filter: blur(16px) saturate(1.4);
+  -webkit-backdrop-filter: blur(16px) saturate(1.4);
+  border: 1px solid rgba(28, 25, 23, 0.08);
+  box-shadow: 0 16px 40px rgba(28, 25, 23, 0.04);
+}
+
+

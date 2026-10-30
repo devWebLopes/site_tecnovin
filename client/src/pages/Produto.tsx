@@ -14,42 +14,8 @@ import SeoHead from "@/components/SeoHead";
 import { Reveal, StaggerContainer, StaggerItem } from "@/components/motion";
 import { PRODUTOS_MAP, getProdutoNavigation } from "@/lib/produtos";
 import { SITE_URL } from "@/lib/seo";
-import { ChevronDown, Factory, Leaf, Sparkles } from "lucide-react";
-import { useState } from "react";
-
-function FaqItem({
-  pergunta,
-  resposta,
-}: {
-  pergunta: string;
-  resposta: string;
-}) {
-  const [open, setOpen] = useState(false);
-  return (
-    <div className="faq-item">
-      <button
-        type="button"
-        className="faq-question"
-        aria-expanded={open}
-        onClick={() => setOpen(v => !v)}
-      >
-        <span>{pergunta}</span>
-        <ChevronDown
-          size={18}
-          strokeWidth={1.5}
-          aria-hidden="true"
-          className={`faq-chevron ${open ? "faq-chevron--open" : ""}`}
-        />
-      </button>
-      <div
-        className={`faq-answer ${open ? "faq-answer--open" : ""}`}
-        hidden={!open}
-      >
-        <p>{resposta}</p>
-      </div>
-    </div>
-  );
-}
+import { Factory, Leaf, Sparkles } from "lucide-react";
+import { FaqAccordionItem } from "@/components/motion";
 
 export default function Produto() {
   const params = useParams<{ slug: string }>();
@@ -340,7 +306,10 @@ export default function Produto() {
               >
                 {produto.faq.map(q => (
                   <StaggerItem key={q.pergunta} role="listitem">
-                    <FaqItem pergunta={q.pergunta} resposta={q.resposta} />
+                    <FaqAccordionItem
+                      pergunta={q.pergunta}
+                      resposta={q.resposta}
+                    />
                   </StaggerItem>
                 ))}
               </StaggerContainer>

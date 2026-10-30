@@ -26,46 +26,13 @@ import SiteFooter from "@/components/SiteFooter";
 import SiteHeader from "@/components/SiteHeader";
 import {
   AnimatedLine,
+  FaqAccordionItem,
   Reveal,
   ScaleRevealImage,
   StaggerContainer,
   StaggerItem,
 } from "@/components/motion";
 import { HOME_FAQ, HOME_SEO, getHomeSchemaGraph } from "@/lib/seo";
-
-function HomeFaqItem({
-  pergunta,
-  resposta,
-}: {
-  pergunta: string;
-  resposta: string;
-}) {
-  const [open, setOpen] = useState(false);
-  return (
-    <div className="faq-item">
-      <button
-        type="button"
-        className="faq-question"
-        aria-expanded={open}
-        onClick={() => setOpen(v => !v)}
-      >
-        <span>{pergunta}</span>
-        <ChevronDown
-          size={18}
-          strokeWidth={1.5}
-          aria-hidden="true"
-          className={`faq-chevron ${open ? "faq-chevron--open" : ""}`}
-        />
-      </button>
-      <div
-        className={`faq-answer ${open ? "faq-answer--open" : ""}`}
-        hidden={!open}
-      >
-        <p>{resposta}</p>
-      </div>
-    </div>
-  );
-}
 
 const products = [
   {
@@ -310,14 +277,14 @@ export default function Home() {
                 <span /> Tecnovin do Brasil · Vale dos Vinhedos
               </div>
             </Reveal>
-            <Reveal delay={0.16} yOffset={24}>
+            <Reveal delay={0.16} yOffset={28} blur={4}>
               <h1>
                 A origem é<br />
                 <em>natural.</em>
                 <br />O padrão é nosso.
               </h1>
             </Reveal>
-            <Reveal delay={0.28} yOffset={20}>
+            <Reveal delay={0.28} yOffset={20} blur={3}>
               <p className="hero-description">
                 Concentrados de frutas para quem transforma matéria-prima em
                 produtos que chegam mais longe.
@@ -435,8 +402,7 @@ export default function Home() {
                   <br />
                   <em>pode ir muito além.</em>
                 </h2>
-              </Reveal>
-              <Reveal delay={0.2} className="intro-copy">
+              </Reveal>              <Reveal delay={0.2} className="intro-copy">
                 <p>
                   É no Vale dos Vinhedos, em Bento Gonçalves, que a Tecnovin
                   transforma frutas em ingredientes para a indústria de
@@ -591,12 +557,12 @@ export default function Home() {
         <section className="products-section" id="solucoes">
           <div className="container">
             <div className="section-heading-row">
-              <Reveal delay={0.05}>
+              <Reveal delay={0.05} blur={3}>
                 <p className="kicker kicker--light">Portfólio para criar</p>
                 <h2 className="display-heading display-heading--light">
                   A fruta em sua
                   <br />
-                  <em>forma mais versátil.</em>
+                  <em className="text-gradient-gold">forma mais versátil.</em>
                 </h2>
               </Reveal>
               <Reveal
@@ -1071,12 +1037,12 @@ export default function Home() {
 
         <section className="territory-section">
           <div className="container territory-grid">
-            <Reveal delay={0.08} className="territory-copy">
+            <Reveal delay={0.08} blur={3} className="territory-copy">
               <p className="kicker">Um ponto no mapa. Muitas possibilidades.</p>
               <h2 className="display-heading display-heading--light">
                 Feito no Vale.
                 <br />
-                <em>Pronto para o mundo.</em>
+                <em className="text-gradient-gold">Pronto para o mundo.</em>
               </h2>
               <p>
                 Em uma região moldada por vales, vinhedos e vocação para
@@ -1359,7 +1325,7 @@ export default function Home() {
             >
               {HOME_FAQ.map(item => (
                 <StaggerItem key={item.pergunta} role="listitem">
-                  <HomeFaqItem
+                  <FaqAccordionItem
                     pergunta={item.pergunta}
                     resposta={item.resposta}
                   />
@@ -1372,12 +1338,12 @@ export default function Home() {
         <section className="contact-section" id="contato">
           <div className="contact-glow" />
           <div className="container contact-grid">
-            <Reveal delay={0.08}>
+            <Reveal delay={0.08} blur={3}>
               <p className="kicker kicker--light">Vamos conversar?</p>
               <h2 className="display-heading display-heading--light">
                 A próxima ideia
                 <br />
-                <em>começa aqui.</em>
+                <em className="text-gradient-gold">começa aqui.</em>
               </h2>
             </Reveal>
             <Reveal delay={0.22} className="contact-copy">

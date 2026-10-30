@@ -12,3 +12,7 @@ export {
 } from "./Reveal";
 export { StaggerGroup } from "./StaggerGroup";
 export { AnimatedLine, type AnimatedLineProps } from "./AnimatedLine";
+export {
+  FaqAccordionItem,
+  type FaqAccordionItemProps,
+} from "./FaqAccordionItem";
